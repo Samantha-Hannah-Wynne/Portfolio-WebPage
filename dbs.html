@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DBS</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="Style.css" />
+  <style>
+  
+  </style>
+</head>
+<body class="dbs-page-body">
+
+  <header class ="dbs-page-header">
+    <h1>DBS Overview</h1>
+    <p>Explore my journey at Dublin Business School.</p>
+    <button id="toggle-theme" aria-label="Toggle Light/Dark Mode">🌞 Light Mode</button>
+  </header>
+
+  <nav class ="dbs-page-nav">
+    <ul>
+      <li><a href="index.html">Main Menu</a></li>
+      <li><a href="mainmenu.html">Home</a></li>
+      <li><a href="dbs.html">DBS</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class ="dbs-page-main">
+    <section>
+      <h2>About DBS</h2>
+      <img src="images/dbs-campus.jpg" alt="DBS Campus" class="dbs-pic">
+      <p>Dublin Business School (DBS) offers a variety of undergraduate and postgraduate courses in the fields of computing, business, and other disciplines. It is known for its focus on practical learning, with a strong emphasis on industry relevance.</p>
+    </section>
+
+    <section class ="dbs-page-section">
+      <h2>My Program</h2>
+      <p>I am currently pursuing a BSc (Hons) in Computing (Data Analytics & Big Data) at DBS. The program focuses on data analysis, cloud computing, and software development, providing a solid foundation in these essential areas of computing.</p>
+    </section>
+
+    <section class ="dbs-page-section">
+      <h2>Why I Chose DBS</h2>
+      <p>I chose DBS because of its strong reputation in providing hands-on experience, the emphasis on small class sizes, and the opportunities to network with industry professionals. The curriculum aligns perfectly with my career aspirations in data analytics and big data.</p>
+    </section>
+
+    <section class ="dbs-page-section">
+      <h2>Course Modules</h2>
+      <ul>
+        <li>Data Analytics and Big Data</li>
+        <li>Introduction to Cloud Computing</li>
+        <li>Programming Fundamentals</li>
+        <li>Logic and Problem Solving</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Samantha Hannah Wynne</p>
+  </footer>
+
+  <script>
+    // Theme toggle function
+const themeToggle = document.getElementById("themeToggle");
+
+themeToggle.addEventListener("click", () => {
+  // Toggle the theme by adding/removing the 'new-theme' class
+  document.documentElement.classList.toggle("new-theme");
+
+  // Change button text based on the current theme
+  if (document.documentElement.classList.contains("new-theme")) {
+    themeToggle.textContent = "🌙 Dark Mode";
+  } else {
+    themeToggle.textContent = "🌞 Light Mode";
+  }
+});
+
+  </script>
+
+</body>
+</html>

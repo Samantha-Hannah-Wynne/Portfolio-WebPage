@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Main Menu</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+
+  <style>
+    /* Base Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #2C2C2C;
+      color: #fff;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    header {
+      background: linear-gradient(to right, #88304E, #522546);
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3em;
+      margin: 0;
+      color: #F7374F;
+    }
+
+    header p {
+      font-size: 1.1em;
+      margin-top: 10px;
+      color: #f0c9d2;
+    }
+
+    #toggle-theme {
+      margin-top: 20px;
+      padding: 8px 16px;
+      background-color: #F7374F;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .menu-item {
+      text-decoration: none;
+      background-color: #522546;
+      color: white;
+      padding: 20px 40px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+      font-size: 1.1em;
+      font-weight: 600;
+      transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+      min-width: 200px;
+      text-align: center;
+      border: 2px solid transparent;
+    }
+
+    .menu-item:hover {
+      background-color: #F7374F;
+      color: white;
+      transform: translateY(-5px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      background-color: #1E1E1E;
+      margin-top: 40px;
+    }
+
+    /* Light Mode Styles */
+    .light-mode {
+      background-color: #f7f7f7;
+      color: #222;
+    }
+
+    .light-mode header {
+      background: linear-gradient(to right, #fcddec, #e1c8e9);
+    }
+
+    .light-mode header h1 {
+      color: #9d174d;
+    }
+
+    .light-mode header p {
+      color: #4a4a4a;
+    }
+
+    .light-mode .menu-item {
+      background-color: #f5e0f2;
+      color: #333;
+    }
+
+    .light-mode .menu-item:hover {
+      background-color: #9d174d;
+      color: white;
+    }
+
+    .light-mode footer {
+      background-color: #ddd;
+      color: #333;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome</h1>
+    <p>Please choose an option below</p>
+    <button id="toggle-theme" aria-label="Toggle Light/Dark Mode">🌞 Light Mode</button>
+  </header>
+
+  <main>
+    <a href="mainmenu.html" class="menu-item">Profile</a>
+    <a href="dbs.html" class="menu-item">DBS</a>
+    <a href="contact.html" class="menu-item">Contact</a>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Samantha Hannah Wynne</p>
+  </footer>
+
+  <script>
+    // Light/Dark mode toggle
+    document.getElementById("toggle-theme").addEventListener("click", function () {
+      document.body.classList.toggle("light-mode");
+      const currentMode = document.body.classList.contains("light-mode") ? "Light" : "Dark";
+      document.getElementById("toggle-theme").textContent = currentMode === "Light" ? "🌙 Dark Mode" : "🌞 Light Mode";
+    });
+
+    // Dynamic year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

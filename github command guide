@@ -1,0 +1,5 @@
+git branch -- shows what branch you are on
+git checkout <branch name> -- switches you to another branch for you to work on
+git checkout -b <new branch name> -- creates a new branch
+
+git push -- pushes all your changes to remote
