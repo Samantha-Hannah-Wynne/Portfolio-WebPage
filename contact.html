@@ -7,207 +7,17 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Open Sans', sans-serif;
-      background-color: #2C2C2C;
-      color: #f4f4f4;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    header {
-      background: linear-gradient(to right, #88304E, #522546);
-      color: white;
-      text-align: center;
-      padding: 50px 20px;
-    }
-
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8em;
-      margin: 0;
-      color: #F7374F;
-    }
-
-    header p {
-      font-size: 1.2em;
-      margin-top: 10px;
-      color: #f0c9d2;
-    }
-
-    nav {
-      background-color: #522546;
-      padding: 15px 20px;
-      text-align: center;
-    }
-
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: inline-flex;
-      gap: 20px;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 8px 16px;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
-
-    nav a:hover {
-      background-color: #F7374F;
-    }
-
-    main {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    section {
-      background-color: #3a3a3a;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    }
-
-    section h2 {
-      font-family: 'Playfair Display', serif;
-      color: #F7374F;
-      font-size: 1.6em;
-      margin-top: 0;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    label {
-      font-weight: 600;
-    }
-
-    input, textarea {
-      padding: 10px;
-      font-size: 1em;
-      border-radius: 5px;
-      border: none;
-    }
-
-    input[type="text"], input[type="email"] {
-      background-color: #f4f4f4;
-    }
-
-    textarea {
-      background-color: #f4f4f4;
-      resize: vertical;
-      height: 150px;
-    }
-
-    button {
-      padding: 10px 20px;
-      font-size: 1.1em;
-      background-color: #F7374F;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    button:hover {
-      background-color: #88304E;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #522546;
-      color: #ccc;
-      font-size: 0.9em;
-      margin-top: 30px;
-    }
-
-    #toggle-theme {
-      margin-top: 20px;
-      padding: 8px 16px;
-      background-color: #F7374F;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    /* Light Mode Styles */
-    .light-mode {
-      background-color: #f7f7f7;
-      color: #222;
-    }
-
-    .light-mode header {
-      background: linear-gradient(to right, #fcddec, #e1c8e9);
-    }
-
-    .light-mode header h1 {
-      color: #9d174d;
-    }
-
-    .light-mode header p {
-      color: #4a4a4a;
-    }
-
-    .light-mode nav {
-      background-color: #e1c8e9;
-    }
-
-    .light-mode nav a {
-      color: #333;
-    }
-
-    .light-mode main {
-      background-color: #fff;
-      color: #333;
-    }
-
-    .light-mode section {
-      background-color: #f5e0f2;
-    }
-
-    .light-mode section h2 {
-      color: #9d174d;
-    }
-
-    .light-mode footer {
-      background-color: #ddd;
-      color: #333;
-    }
-
-    @media (max-width: 600px) {
-      nav ul {
-        flex-direction: column;
-        gap: 10px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="Style.css" />
 </head>
-<body>
+<body class="contact-body">
 
-  <header>
+  <header class="contact-header">
     <h1>Contact Me</h1>
     <p>Feel free to get in touch!</p>
-    <button id="toggle-theme" aria-label="Toggle Light/Dark Mode">🌞 Light Mode</button>
+    <button id="themeToggle" aria-label="Toggle Light/Dark Mode">🌞 Light Mode</button>
   </header>
 
-  <nav>
+  <nav class="contact-nav">
     <ul>
       <li><a href="index.html">Main Menu</a></li>
       <li><a href="mainmenu.html">Home</a></li>
@@ -216,8 +26,8 @@
     </ul>
   </nav>
 
-  <main>
-    <section>
+  <main class="contact-main">
+    <section class="contact-section">
       <h2>Contact Form</h2>
       <form action="#" method="POST">
         <label for="name">Full Name:</label>
@@ -242,13 +52,22 @@
   </footer>
 
   <script>
-    // Light/Dark mode toggle
-    document.getElementById("toggle-theme").addEventListener("click", function () {
-      document.body.classList.toggle("light-mode");
-      const currentMode = document.body.classList.contains("light-mode") ? "Light" : "Dark";
-      document.getElementById("toggle-theme").textContent = currentMode === "Light" ? "🌙 Dark Mode" : "🌞 Light Mode";
-    });
-  </script>
+    // Theme toggle function
+const themeToggle = document.getElementById("themeToggle");
+
+themeToggle.addEventListener("click", () => {
+  // Toggle the theme by adding/removing the 'new-theme' class
+  document.documentElement.classList.toggle("new-theme");
+
+  // Change button text based on the current theme
+  if (document.documentElement.classList.contains("new-theme")) {
+    themeToggle.textContent = "🌙 Dark Mode";
+  } else {
+    themeToggle.textContent = "🌞 Light Mode";
+  }
+});
+
+  </script> 
 
 </body>
 </html>
