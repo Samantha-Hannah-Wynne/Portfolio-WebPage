@@ -1,22 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+   <!-- Meta tags for SEO and to make the page suitable for mobile too -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with Samantha Hannah Wynne for project collaborations, inquiries, or feedback.">
+  <meta name="keywords" content="contact, reach out, inquiry, get in touch">
+
+  <!-- Title for the webpage -->
   <title>Contact</title>
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts to make the text look pretty -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  
+  <!-- This is linking the external CSS file where the styles are defined -->
   <link rel="stylesheet" href="Style.css" />
 </head>
 <body class="contact-body">
 
+  <!-- This is the header section with a title and a theme toggle button -->
   <header class="contact-header">
     <h1>Contact Me</h1>
     <p>Feel free to get in touch!</p>
+
+    <!-- This button toggles between light and dark mode -->
     <button id="themeToggle" aria-label="Toggle Light/Dark Mode">🌞 Light Mode</button>
+
+    <!-- Soft Scroll Button -->
+    <button id="scrollTop" aria-label="Scroll to Top">↑</button>
   </header>
 
+  <!-- Main Navigation -->
   <nav class="contact-nav">
     <ul>
       <li><a href="index.html">Main Menu</a></li>
@@ -26,48 +40,112 @@
     </ul>
   </nav>
 
+  <!-- Form filling section -->
   <main class="contact-main">
     <section class="contact-section">
       <h2>Contact Form</h2>
-      <form action="#" method="POST">
+      <form id="commentForm" action="#" method="POST">
+        <!-- User enters their full name -->
         <label for="name">Full Name:</label>
         <input type="text" id="name" name="name" required>
 
+        <!-- User enters their email -->
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
 
+        <!-- User enters subject (its optional) -->
         <label for="subject">Subject:</label>
         <input type="text" id="subject" name="subject">
 
+        <!-- The user writes the message here -->
         <label for="message">Message:</label>
         <textarea id="message" name="message" required></textarea>
 
+        <!-- Button to send the form -->
         <button type="submit">Send</button>
       </form>
     </section>
   </main>
 
+  <!-- Footer with copyright info and the license -->
   <footer>
-    <p>© 2025 Samantha Hannah Wynne</p>
+    <p>© <span id="year"></span> Samantha Hannah Wynne. All rights reserved.</p>
+    <p>Licensed under Creative Commons 4.0.</p>
   </footer>
+  
 
   <script>
-    // Theme toggle function
-const themeToggle = document.getElementById("themeToggle");
-
-themeToggle.addEventListener("click", () => {
-  // Toggle the theme by adding/removing the 'new-theme' class
-  document.documentElement.classList.toggle("new-theme");
-
-  // Change button text based on the current theme
-  if (document.documentElement.classList.contains("new-theme")) {
+     // Light/Dark mode toggle logic
+     const themeToggle = document.getElementById("themeToggle");
+  
+  // This checks the saved theme in localStorage and apply it when the page loads
+  if (localStorage.getItem("theme") === "light") {
+    document.documentElement.classList.add("new-theme");
     themeToggle.textContent = "🌙 Dark Mode";
   } else {
     themeToggle.textContent = "🌞 Light Mode";
   }
+
+  // When the button is clicked, toggle between light and dark mode
+  themeToggle.addEventListener("click", () => {
+    const html = document.documentElement;
+
+    if (html.classList.contains("new-theme")) {
+      html.classList.remove("new-theme");
+      localStorage.setItem("theme", "dark");
+      themeToggle.textContent = "🌞 Light Mode";
+    } else {
+      html.classList.add("new-theme");
+      localStorage.setItem("theme", "light");
+      themeToggle.textContent = "🌙 Dark Mode";
+    }
+  });
+  
+  // Smooth scroll to top
+const scrollTopBtn = document.getElementById("scrollTop");
+
+// This shows button when scrolling down
+window.addEventListener("scroll", () => {
+if (window.scrollY > 200) {
+  scrollTopBtn.style.display = "block";
+} else {
+  scrollTopBtn.style.display = "none";
+}
 });
 
-  </script> 
+scrollTopBtn.addEventListener("click", () => {
+window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+
+    // XSS Protection and Form Validation
+    const commentForm = document.getElementById("commentForm");
+    commentForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const subject = document.getElementById("subject").value;
+      const message = sanitizeInput(document.getElementById("message").value);
+
+      if (!email.includes("@")) {
+        alert("Invalid email address!");
+        return;
+      }
+
+      alert(`Thank you, ${name}, for your message: ${message}`);
+    });
+
+    // Function to sanitize user input
+    function sanitizeInput(input) {
+      let div = document.createElement("div");
+      div.innerText = input;  // Convert any potentially dangerous characters into text
+      return div.innerHTML;   // Return sanitized HTML (escaped text)
+    }
+    // Automatically updates the copyright year to the current year 
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  </script>
 
 </body>
 </html>

@@ -1,22 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Meta tags for SEO and to make the page suitable for mobile too -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My CV</title>
-
-  <!-- Google Fonts -->
+  <meta name="description" content="Personal portfolio of Samantha Hannah Wynne showcasing projects and skills in data analytics, music, and technology.">
+  <meta name="keywords" content="Samantha Hannah Wynne, portfolio, data analytics, web development, music, technology">
+  
+  <!-- Title for the webpage -->
+  <title>Welcome to My Portfolio</title>
+  
+ <!-- Google Fonts to make the text look pretty -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+  
+  <!-- This is linking the external CSS file where the styles are defined -->
   <link rel="stylesheet" href="Style.css" />
 </head>
 <body class="mainmenu-body">
 
+  <!-- This is the header section with my name, a title and a theme toggle button -->
   <header class="mainmenu-header">
-    <h1>Samantha Hannah Wynne</h1>
-    <p>Welcome to my profile!</p>
+    <h1 id="title">Samantha Hannah Wynne</h1>
+    <p id="subtitle">Welcome to my profile!</p>
+
+    <!-- This button toggles between light and dark mode -->
     <button id="themeToggle" aria-label="Toggle Light/Dark Mode">🌞 Light Mode</button>
+
+    <!-- Soft Scroll Button -->
+    <button id="scrollTop" aria-label="Soft scroll">↑</button>
+
+    <!-- Language Selection Buttons -->
+    <div class="lang-buttons">
+      <button class="lang-btn" id="btn-en">EN</button>
+      <button class="lang-btn" id="btn-fr">FR</button>
+      <button class="lang-btn" id="btn-ta">TA</button>
+    </div>
   </header>
 
+  <!-- Main Navigation -->
   <nav class="mainmenu-nav">
     <ul>
       <li><a href="index.html">Main Menu</a></li>
@@ -27,70 +48,203 @@
   </nav>
 
   <main class="mainmenu-main">
+
+     <!-- About Me Section -->
     <section class="mainmenu-section">
-      <h2>About Me</h2>
-      <img src="images/profile-pic.jpg" alt="My Profile Picture" class="profile-pic">
-      <p>Undergraduate student in Data Analytics and Big Data at Dublin Business School, skilled in Python and developing in C++, HTML, and Prolog. Passionate about problem-solving, AI, and system optimization, with experience in music leadership and event coordination. Eager to contribute to innovative solutions in data science and computing.</p>
+      <h2 id="about">About Me</h2>
+
+      <!-- Image Section -->
+      <img src="images/profile-pic.jpg" alt="A Picture of Samantha Hannah Wynne" class="profile-pic" loading="lazy">
+      <!-- Copyright Credit -->
+      <p>Image credit: © Samantha Hannah Wynne</p>
+
+      <p id="about-text">Undergraduate student in Data Analytics and Big Data at Dublin Business School, skilled in Python and developing in C++, HTML, and Prolog. Passionate about problem-solving, AI, and system optimization, with experience in music leadership and event coordination. Eager to contribute to innovative solutions in data science and computing.</p>
     </section>
 
+    <!-- Education Section -->
     <section class="mainmenu-section">
-      <h2>Education</h2>
+      <h2 id="education">Education</h2>
       <ul>
-        <li>Currently studying BSc (Hons) in Computing (Data Analytics & Big Data) at Dublin Business School (2024 - 2028).</li>
-        <li>High School Graduate, Good Shepherd Matriculation Higher Secondary School (2011 - 2024).</li>
+        <li id="edu1">Currently studying BSc (Hons) in Computing (Data Analytics & Big Data) at Dublin Business School (2024 - 2028).</li>
+        <li id="edu2">High School Graduate, Good Shepherd Matriculation Higher Secondary School (2011 - 2024).</li>
       </ul>
     </section>
 
+    <!-- Skills Section -->
     <section class="mainmenu-section">
-      <h2>Skills</h2>
+      <h2 id="skills">Skills</h2>
       <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>Python</li> 
-        <li>Communication</li>
+        <li id="skill1">HTML</li>
+        <li id="skill2">CSS</li>
+        <li id="skill3">Python</li> 
+        <li id="skill4">Communication</li>
       </ul>
     </section>
 
+    <!-- Experience Section -->
     <section class="mainmenu-section">
-      <h2>Experiences</h2>
-      <p>As a 17-year-old who recently moved abroad and graduated last year, I haven't had the chance to gain formal work experience. Instead, here are other experiences I've gained through other projects and personal learning.</p>
+      <h2 id="experiences">Experiences</h2>
+      <p id="exp-intro">As a 17-year-old who recently moved abroad and graduated last year, I haven't had the chance to gain formal work experience. Instead, here are other experiences I've gained through other projects and personal learning.</p>
       <ul>
-        <li><strong>Head Music Coordinator</strong> at Good Shepherd Matriculation Higher Secondary School: Founded the school's first band in over 100 years, led a team of junior captains, organized concerts, composed original digital pieces, and integrated music technology.</li>
-        <li><strong>Freelance Drone Videographer & Photographer</strong>: Captured real estate progress, and offered professional photography services for events.</li>
+        <li id="exp1"><strong>Head Music Coordinator</strong> at Good Shepherd Matriculation Higher Secondary School: Founded the school's first band in over 100 years, led a team of junior captains, organized concerts, composed original digital pieces, and integrated music technology.</li>
+        <li id="exp2"><strong>Freelance Drone Videographer & Photographer</strong>: Captured real estate progress, and offered professional photography services for events.</li>
       </ul>
     </section>
 
+    <!-- Hobbies Section -->
     <section class="mainmenu-section">
-      <h2>Hobbies</h2>
+      <h2 id="hobbies">Hobbies</h2>
       <ul>
-        <li>Music Composition</li>
-        <li>Hands-on DIY projects</li>
-        <li>3D modeling and printing</li>
+        <li id="hobby1">Music Composition</li>
+        <li id="hobby2">Hands-on DIY projects</li>
+        <li id="hobby3">3D modeling and printing</li>
       </ul>
     </section>
+
   </main>
 
+ <!-- Footer with copyright info and the license -->
   <footer>
-    <p>© 2025 Samantha Hannah Wynne</p>
+    <p>© <span id="year"></span> Samantha Hannah Wynne. All rights reserved.</p>
+    <p>Licensed under Creative Commons 4.0.</p>
   </footer>
+  
 
   <script>
-    // Theme toggle function
-const themeToggle = document.getElementById("themeToggle");
+    // Language switching buttons
+    document.getElementById("btn-en").addEventListener("click", () => changeLanguage("en"));
+    document.getElementById("btn-fr").addEventListener("click", () => changeLanguage("fr"));
+    document.getElementById("btn-ta").addEventListener("click", () => changeLanguage("ta"));
 
-themeToggle.addEventListener("click", () => {
-  // Toggle the theme by adding/removing the 'new-theme' class
-  document.documentElement.classList.toggle("new-theme");
+     // Function to change the language of the content
+    function changeLanguage(lang) {
+        const translations = {
+            en: {
+                title: "Samantha Hannah Wynne",
+                subtitle: "Welcome to my profile!",
+                "about-title": "About Me",
+                "about-text": "Undergraduate student in Data Analytics and Big Data at Dublin Business School, skilled in Python and developing in C++, HTML, and Prolog. Passionate about problem-solving, AI, and system optimization, with experience in music leadership and event coordination. Eager to contribute to innovative solutions in data science and computing.",
+                "education-title": "Education",
+                edu1: "Currently studying BSc (Hons) in Computing (Data Analytics & Big Data) at Dublin Business School (2024 - 2028).",
+                edu2: "High School Graduate, Good Shepherd Matriculation Higher Secondary School (2011 - 2024).",
+                "skills-title": "Skills",
+                skill1: "HTML", skill2: "CSS", skill3: "Python", skill4: "Communication",
+                "experience-title": "Experiences",
+                "experience-text": "As a 17-year-old who recently moved abroad and graduated last year, I haven't had the chance to gain formal work experience. Instead, here are other experiences I've gained through other projects and personal learning.",
+                exp1: "Head Music Coordinator at Good Shepherd Matriculation Higher Secondary School: Founded the school's first band in over 100 years, led a team of junior captains, organized concerts, composed original digital pieces, and integrated music technology.",
+                exp2: "Freelance Drone Videographer & Photographer: Captured real estate progress, and offered professional photography services for events.",
+                "hobbies-title": "Hobbies",
+                hobby1: "Music Composition", hobby2: "Hands-on DIY projects", hobby3: "3D modeling and printing"
+            },
+            fr: {
+                title: "Samantha Hannah Wynne",
+                subtitle: "Bienvenue sur mon profil !",
+                "about-title": "À propos de moi",
+                "about-text": "Étudiante en analyse de données et Big Data à Dublin Business School, compétente en Python, C++, HTML et Prolog. Passionnée par la résolution de problèmes, l'IA et l'optimisation des systèmes. Expérience en leadership musical et coordination d'événements.",
+                "education-title": "Éducation",
+                edu1: "Étude en BSc (Hons) en Informatique (Analyse de données & Big Data) à Dublin Business School (2024 - 2028).",
+                edu2: "Diplômée du Good Shepherd Matriculation Higher Secondary School (2011 - 2024).",
+                "skills-title": "Compétences",
+                skill1: "HTML", skill2: "CSS", skill3: "Python", skill4: "Communication",
+                "experience-title": "Expériences",
+                "experience-text": "Je suis une jeune diplômée de 17 ans, ayant récemment déménagé à l'étranger, et n'ayant pas encore acquis d'expérience professionnelle formelle. Voici donc mes expériences acquises à travers divers projets et apprentissages personnels.",
+                exp1: "Coordonnatrice musicale à Good Shepherd Matriculation Higher Secondary School : Fondé la première fanfare en 100 ans, dirigé une équipe, organisé des concerts et composé des morceaux originaux.",
+                exp2: "Vidéaste et photographe freelance : Capturé les progrès immobiliers, offert des services professionnels pour des événements.",
+                "hobbies-title": "Loisirs",
+                hobby1: "Composition musicale", hobby2: "Projets DIY", hobby3: "Modélisation et impression 3D"
+            },
+            ta: {
+                title: "சமந்தா ஹண்ணா வின்",
+                subtitle: "என் சுயவிவரத்திற்கு வரவேற்கிறேன்!",
+                "about-title": "என்னை பற்றி",
+                "about-text": "டப்லின் பிசினஸ் பள்ளியில் தரவுத் தொகுப்புகள் மற்றும் பிக்டேட்டா பயிலும் மாணவி. பைத்தான், C++, HTML மற்றும் ப்ரொலாக் போன்றவற்றில் திறமை வாய்ந்தவர். சிக்கல் தீர்க்கும் திறன், இசைத் தலைமை மற்றும் நிகழ்ச்சி ஒருங்கிணைப்பில் அனுபவம் கொண்டவர்.",
+                "education-title": "கல்வி",
+                edu1: "டப்லின் பிசினஸ் பள்ளியில் கணிப்பியல் (தரவுகள் பகுப்பாய்வு மற்றும் பிக்டேட்டா) பாடத்தில் படிப்பது (2024 - 2028).",
+                edu2: "ஹைஸ்கூல் பட்டம், கூட் ஷெபர்ட் மட்ரிகுலேஷன் உயர்நிலைப் பள்ளி (2011 - 2024).",
+                "skills-title": "திறன்கள்",
+                skill1: "HTML", skill2: "CSS", skill3: "Python", skill4: "தொடர்பு",
+                "experience-title": "அனுபவங்கள்",
+                "experience-text": "17 வயது மாணவி, பிப்ரவரியில் வெளிநாட்டுக்கு குடியிருந்தேன், படிப்புகளையும் நிபுணத்துவமான அனுபவங்களையும் பெறாமல் இருக்கின்றேன். எனினும், எனது முந்தைய அனுபவங்களின் பட்டியல் கீழே உள்ளது.",
+                exp1: "குட் ஷெபர்ட் மட்ரிகுலேஷன் உயர்நிலைப் பள்ளியில் தலைவர் இசை ஒருங்கிணைப்பாளர்: பள்ளியின் முதல் இசைக் குழுவை அமைத்தேன், ஜூனியர் தலைவர்களுடன் ஒரு குழுவை அமைத்தேன், கான்சர்டுகளைக் கொண்டேன் மற்றும் இசைத் தொழில்நுட்பத்தை ஒருங்கிணைத்தேன்.",
+                exp2: "இணையத் தொழில்நுட்பக் கலைஞராக பணியாற்றி, வீடு தொடர்பான புகைப்படங்களை எடுத்தேன் மற்றும் நிகழ்ச்சி படங்களை வழங்கினேன்.",
+                "hobbies-title": "வினாடி பொழுதுபோக்குகள்",
+                hobby1: "இசை அமைப்புகள்", hobby2: "DIY திட்டங்கள்", hobby3: "3D மொடலிங் மற்றும் அச்சிடுதல்"
+            }
+        };
+        const selectedLang = translations[lang];
 
-  // Change button text based on the current theme
-  if (document.documentElement.classList.contains("new-theme")) {
-    themeToggle.textContent = "🌙 Dark Mode";
+        // This is used to change the page content based on selected language
+        document.getElementById("title").textContent = selectedLang.title;
+        document.getElementById("subtitle").textContent = selectedLang.subtitle;
+        document.getElementById("about").textContent = selectedLang["about-title"];
+        document.getElementById("about-text").textContent = selectedLang["about-text"];
+        document.getElementById("education").textContent = selectedLang["education-title"];
+        document.getElementById("edu1").textContent = selectedLang.edu1;
+        document.getElementById("edu2").textContent = selectedLang.edu2;
+        document.getElementById("skills").textContent = selectedLang["skills-title"];
+        document.getElementById("skill1").textContent = selectedLang.skill1;
+        document.getElementById("skill2").textContent = selectedLang.skill2;
+        document.getElementById("skill3").textContent = selectedLang.skill3;
+        document.getElementById("skill4").textContent = selectedLang.skill4;
+        document.getElementById("experiences").textContent = selectedLang["experience-title"];
+        document.getElementById("exp-intro").textContent = selectedLang["experience-text"];
+        document.getElementById("exp1").textContent = selectedLang.exp1;
+        document.getElementById("exp2").textContent = selectedLang.exp2;
+        document.getElementById("hobbies").textContent = selectedLang["hobbies-title"];
+        document.getElementById("hobby1").textContent = selectedLang.hobby1;
+        document.getElementById("hobby2").textContent = selectedLang.hobby2;
+        document.getElementById("hobby3").textContent = selectedLang.hobby3;
+
+        // This is used to hide the selected language button
+        document.querySelectorAll(".lang-btn").forEach(button => button.style.display = "inline-block");
+        document.getElementById(`btn-${lang}`).style.display = "none"; // Hide the selected language button
+    }
+
+    // Light/Dark mode toggle logic
+    const themeToggle = document.getElementById("themeToggle");
+  
+    // This checks the saved theme in localStorage and apply it when the page loads
+    if (localStorage.getItem("theme") === "light") {
+      document.documentElement.classList.add("new-theme");
+      themeToggle.textContent = "🌙 Dark Mode";
+    } else {
+      themeToggle.textContent = "🌞 Light Mode";
+    }
+  
+    // When the button is clicked, toggle between light and dark mode
+    themeToggle.addEventListener("click", () => {
+      const html = document.documentElement;
+  
+      if (html.classList.contains("new-theme")) {
+        html.classList.remove("new-theme");
+        localStorage.setItem("theme", "dark");
+        themeToggle.textContent = "🌞 Light Mode";
+      } else {
+        html.classList.add("new-theme");
+        localStorage.setItem("theme", "light");
+        themeToggle.textContent = "🌙 Dark Mode";
+      }
+    });
+    
+    // Smooth scroll to top
+  const scrollTopBtn = document.getElementById("scrollTop");
+
+// This shows button when scrolling down
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 200) {
+    scrollTopBtn.style.display = "block";
   } else {
-    themeToggle.textContent = "🌞 Light Mode";
+    scrollTopBtn.style.display = "none";
   }
 });
 
-  </script> 
+scrollTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// Automatically updates the copyright year to the current year
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>

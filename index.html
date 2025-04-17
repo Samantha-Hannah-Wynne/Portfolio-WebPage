@@ -1,49 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Meta tags for SEO and to make the page suitable for mobile too -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Main Menu</title>
+  <meta name="description" content="Personal portfolio of Samantha Hannah Wynne showcasing projects and skills in data analytics, music, and technology.">
+  <meta name="keywords" content="Samantha Hannah Wynne, portfolio, data analytics, web development, music, technology">
+  
+  <!-- Title for the webpage -->
+  <title>Welcome to My Portfolio</title>
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts to make the text look pretty -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+  
+  <!-- This is linking the external CSS file where the styles are defined -->
   <link rel="stylesheet" href="Style.css" />
 </head>
 <body class="index-body">
 
+  <!-- This is the header section with a title and a theme toggle button -->
   <header class="index-header">
     <h1>Welcome</h1>
     <p>Please choose an option below</p>
+    
+    <!-- This button toggles between light and dark mode -->
     <button id="themeToggle" aria-label="Toggle Light/Dark Mode">🌞 Light Mode</button>
   </header>
 
   <main class="index-main">
+    <!-- This Links to different pages of the portfolio -->
     <a href="mainmenu.html" class="menu-item">Profile</a>
     <a href="dbs.html" class="menu-item">DBS</a>
     <a href="contact.html" class="menu-item">Contact</a>
+
+    <!-- This is the modal that pops up after 5 seconds -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Welcome to the website!</h2>
+        <p>Thank you for visiting. Enjoy your stay!</p>
+      </div>
+    </div>
+
+    <!-- This displays how many times the page has been visited -->
+    <p id="visitCounter">Visits: 0</p>
   </main>
 
+  <!-- Footer with copyright info and the license -->
   <footer>
-    <p>© <span id="year"></span> Samantha Hannah Wynne</p>
+    <p>© <span id="year"></span> Samantha Hannah Wynne. All rights reserved.</p>
+    <p>Licensed under Creative Commons 4.0.</p>
   </footer>
 
   <script>
-    // Theme toggle function
-const themeToggle = document.getElementById("themeToggle");
+    
+    // Light/Dark mode toggle logic
+    const themeToggle = document.getElementById("themeToggle");
 
-themeToggle.addEventListener("click", () => {
-  // Toggle the theme by adding/removing the 'new-theme' class
-  document.documentElement.classList.toggle("new-theme");
+    // This checks the saved theme in localStorage and apply it when the page loads
+    if (localStorage.getItem("theme") === "light") {
+      document.documentElement.classList.add("new-theme");  
+      themeToggle.textContent = "🌙 Dark Mode";  
+    } else {
+      themeToggle.textContent = "🌞 Light Mode";  
+    }
 
-  // Change button text based on the current theme
-  if (document.documentElement.classList.contains("new-theme")) {
-    themeToggle.textContent = "🌙 Dark Mode";
-  } else {
-    themeToggle.textContent = "🌞 Light Mode";
-  }
-});
+    // When the button is clicked, toggle between light and dark mode
+    themeToggle.addEventListener("click", () => {
+      const html = document.documentElement;
 
-  </script> 
+      if (html.classList.contains("new-theme")) {
+        html.classList.remove("new-theme");  
+        localStorage.setItem("theme", "dark");  
+        themeToggle.textContent = "🌞 Light Mode";  
+      } else {
+        html.classList.add("new-theme");  
+        localStorage.setItem("theme", "light");  
+        themeToggle.textContent = "🌙 Dark Mode";  
+      }
+    });
+
+    // Modal logic - shows the modal after 5 seconds
+    const modal = document.getElementById("modal");
+    const closeModalBtn = document.querySelector(".close-btn");
+
+    // Waits for 5 seconds and then shows the modal
+    setTimeout(() => {
+      modal.style.display = "block";
+    }, 5000);
+
+    // Closes the modal when the "x" button is clicked
+    closeModalBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    // Close the modal if you click outside of it
+    window.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+
+    // Visit counter which helps you keep track of how many times the page has been visited
+    const visitCounter = document.getElementById("visitCounter");
+    let visits = localStorage.getItem("visits") || 0;  
+    visits++;  
+    localStorage.setItem("visits", visits); 
+    visitCounter.innerText = `Visits: ${visits}`; 
+
+    // Automatically updates the copyright year to the current year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
