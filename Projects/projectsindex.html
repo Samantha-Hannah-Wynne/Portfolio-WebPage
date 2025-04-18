@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags to make the page suitable for mobile too -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Title for the webpage -->
+  <title>My Projects</title>
+
+  <!-- This is linking the external CSS file where the styles are defined -->
+  <link rel="stylesheet" href="../Style.css" />
+</head>
+<body class="index-body">
+
+    <!-- This is the header section with a title and a theme toggle button -->
+  <header class="index-header">
+
+    <!-- Back arrow button -->
+    <a href="../index.html" class="back-button" aria-label="Back to Home">←</a>
+
+    <h1>My Projects</h1>
+    <p>Take a look at some of my recent work</p>
+
+    <!-- This button toggles between light and dark mode -->
+    <button id="themeToggle" aria-label="Toggle Light/Dark Mode">🌞 Light Mode</button>
+  </header>
+
+  <main class="index-main">
+    <!-- This Links to different pages of the projects -->
+    <a href="project1/index.html" class="menu-item">Project 1</a>
+    <a href="events classwork/eventsdashboard.html" class="menu-item">DBS Events</a>
+    <a href="project3/index.html" class="menu-item">Project 3</a>
+  </main>
+
+  <!-- Footer with copyright info and the license -->
+  <footer>
+    <p>© <span id="year"></span> Samantha Hannah Wynne. All rights reserved.</p>
+    <p>Licensed under Creative Commons 4.0.</p>
+  </footer>
+
+  <script>
+    // Light/Dark mode toggle logic
+    const themeToggle = document.getElementById("themeToggle");
+
+    // This checks the saved theme in localStorage and apply it when the page loads
+    if (localStorage.getItem("theme") === "light") {
+      document.documentElement.classList.add("new-theme");  
+      themeToggle.textContent = "🌙 Dark Mode";  
+    } else {
+      themeToggle.textContent = "🌞 Light Mode";  
+    }
+
+    // When the button is clicked, toggle between light and dark mode
+    themeToggle.addEventListener("click", () => {
+      const html = document.documentElement;
+
+      if (html.classList.contains("new-theme")) {
+        html.classList.remove("new-theme");  
+        localStorage.setItem("theme", "dark");  
+        themeToggle.textContent = "🌞 Light Mode";  
+      } else {
+        html.classList.add("new-theme");  
+        localStorage.setItem("theme", "light");  
+        themeToggle.textContent = "🌙 Dark Mode";  
+      }
+    });
+
+    // Automatically updates the copyright year to the current year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+  </script>
+</body>
+</html>
