@@ -6,15 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Personal portfolio of Samantha Hannah Wynne showcasing projects and skills in data analytics, music, and technology.">
   <meta name="keywords" content="Samantha Hannah Wynne, portfolio, data analytics, web development, music, technology">
-  
+
   <!-- Title for the webpage -->
   <title>Welcome to My Portfolio</title>
-  
+
  <!-- Google Fonts to make the text look pretty -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
-  
+
   <!-- This is linking the external CSS file where the styles are defined -->
-  <link rel="stylesheet" href="Style.css" />
+  <link rel="stylesheet" href="../assets/css/global-style.css" />
 </head>
 <body class="mainmenu-body">
 
@@ -40,10 +40,10 @@
   <!-- Main Navigation -->
   <nav class="mainmenu-nav">
     <ul>
-      <li><a href="index.html">Main Menu</a></li>
-      <li><a href="mainmenu.html">Home</a></li>
-      <li><a href="dbs.html">DBS</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <a href="../index.html" class="menu-item">Home</a>
+      <a href="university-info.html" class="menu-item">DBS</a>
+      <a href="poject-dashboard.html" class="menu-item">Projects</a>
+      <a href="contact-info.html" class="menu-item">Contact</a>
     </ul>
   </nav>
 
@@ -55,14 +55,14 @@
 
 <!-- Image Section -->
 <div class="profile-pic-wrapper">
-  <img src="images/profile-pic.jpg" alt="A Picture of Samantha Hannah Wynne" class="profile-pic" loading="lazy">
-  
+  <img src="../assets/images/profile-pic.jpg" alt="A Picture of Samantha Hannah Wynne" class="profile-pic" loading="lazy">
+
 </div>
 
       <p id="about-text">Undergraduate student in Data Analytics and Big Data at Dublin Business School, skilled in Python and developing in C++, HTML, and Prolog. Passionate about problem-solving, AI, and system optimization, with experience in music leadership and event coordination. Eager to contribute to innovative solutions in data science and computing.</p>
     <!-- Copyright Credit -->
   <p class="image-credit">Image credit: © Samantha Hannah Wynne</p>
-  
+
     </section>
 
     <!-- Education Section -->
@@ -80,7 +80,7 @@
       <ul>
         <li id="skill1">HTML</li>
         <li id="skill2">CSS</li>
-        <li id="skill3">Python</li> 
+        <li id="skill3">Python</li>
         <li id="skill4">Communication</li>
       </ul>
     </section>
@@ -112,7 +112,7 @@
     <p>© <span id="year"></span> Samantha Hannah Wynne. All rights reserved.</p>
     <p>Licensed under Creative Commons 4.0.</p>
   </footer>
-  
+
 
   <script>
     // Language switching buttons
@@ -206,7 +206,7 @@
 
     // Light/Dark mode toggle logic
     const themeToggle = document.getElementById("themeToggle");
-  
+
     // This checks the saved theme in localStorage and apply it when the page loads
     if (localStorage.getItem("theme") === "light") {
       document.documentElement.classList.add("new-theme");
@@ -214,11 +214,11 @@
     } else {
       themeToggle.textContent = "🌞 Light Mode";
     }
-  
+
     // When the button is clicked, toggle between light and dark mode
     themeToggle.addEventListener("click", () => {
       const html = document.documentElement;
-  
+
       if (html.classList.contains("new-theme")) {
         html.classList.remove("new-theme");
         localStorage.setItem("theme", "dark");
@@ -229,7 +229,7 @@
         themeToggle.textContent = "🌙 Dark Mode";
       }
     });
-    
+
     // Smooth scroll to top
   const scrollTopBtn = document.getElementById("scrollTop");
 

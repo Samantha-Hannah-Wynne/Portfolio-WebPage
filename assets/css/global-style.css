@@ -189,8 +189,8 @@
 
 .image-credit {
   font-size: 0.75rem;
-  color: #928f8f; 
-  margin-top: 5px; 
+  color: #928f8f;
+  margin-top: 5px;
 }
 
 .contact-body {
@@ -401,13 +401,24 @@ li {
   margin-bottom: 10px;
 }
 
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
 footer {
   text-align: center;
   padding: 20px;
   background-color: #522546;
   color: #ccc;
   font-size: 0.9em;
-  margin-top: 30px;
 }
 
 #themeToggle {
@@ -556,7 +567,7 @@ footer {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); 
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 /* Modal content */

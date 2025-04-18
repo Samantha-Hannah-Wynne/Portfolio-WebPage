@@ -9,7 +9,7 @@
   <title>My Projects</title>
 
   <!-- This is linking the external CSS file where the styles are defined -->
-  <link rel="stylesheet" href="../Style.css" />
+  <link rel="stylesheet" href="../assets/css/global-style.css" />
 </head>
 <body class="index-body">
 
@@ -29,7 +29,7 @@
   <main class="index-main">
     <!-- This Links to different pages of the projects -->
     <a href="project1/index.html" class="menu-item">Project 1</a>
-    <a href="events classwork/eventsdashboard.html" class="menu-item">DBS Events</a>
+    <a href="events-dashboard.html" class="menu-item">DBS Events</a>
     <a href="project3/index.html" class="menu-item">Project 3</a>
   </main>
 
@@ -45,10 +45,10 @@
 
     // This checks the saved theme in localStorage and apply it when the page loads
     if (localStorage.getItem("theme") === "light") {
-      document.documentElement.classList.add("new-theme");  
-      themeToggle.textContent = "🌙 Dark Mode";  
+      document.documentElement.classList.add("new-theme");
+      themeToggle.textContent = "🌙 Dark Mode";
     } else {
-      themeToggle.textContent = "🌞 Light Mode";  
+      themeToggle.textContent = "🌞 Light Mode";
     }
 
     // When the button is clicked, toggle between light and dark mode
@@ -56,13 +56,13 @@
       const html = document.documentElement;
 
       if (html.classList.contains("new-theme")) {
-        html.classList.remove("new-theme");  
-        localStorage.setItem("theme", "dark");  
-        themeToggle.textContent = "🌞 Light Mode";  
+        html.classList.remove("new-theme");
+        localStorage.setItem("theme", "dark");
+        themeToggle.textContent = "🌞 Light Mode";
       } else {
-        html.classList.add("new-theme");  
-        localStorage.setItem("theme", "light");  
-        themeToggle.textContent = "🌙 Dark Mode";  
+        html.classList.add("new-theme");
+        localStorage.setItem("theme", "light");
+        themeToggle.textContent = "🌙 Dark Mode";
       }
     });
 

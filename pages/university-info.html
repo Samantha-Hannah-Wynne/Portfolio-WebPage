@@ -6,15 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Learn about my journey at Dublin Business School (DBS), pursuing a BSc (Hons) in Computing with a focus on Data Analytics and Big Data." />
   <meta name="keywords" content="DBS, Dublin Business School, Data Analytics, Big Data, Computing, BSc" />
-  
+
   <!-- Title for the webpage -->
   <title>DBS</title>
 
   <!-- Google Fonts to make the text look pretty -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
- 
+
   <!-- This is linking the external CSS file where the styles are defined -->
-  <link rel="stylesheet" href="Style.css" />
+  <link rel="stylesheet" href="../assets/css/global-style.css" />
 
 </head>
 <body class="dbs-page-body">
@@ -34,10 +34,10 @@
   <!-- Main Navigation -->
   <nav class ="dbs-page-nav">
     <ul>
-      <li><a href="index.html">Main Menu</a></li>
-      <li><a href="mainmenu.html">Home</a></li>
-      <li><a href="dbs.html">DBS</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <a href="profile-dashboard.html" class="menu-item">Profile</a>
+      <a href="../index.html" class="menu-item" >Home</a>
+      <a href="poject-dashboard.html" class="menu-item">Projects</a>
+      <a href="contact-info.html" class="menu-item">Contact</a>
     </ul>
   </nav>
 
@@ -47,7 +47,7 @@
       <h2>About DBS</h2>
 
       <!-- Image Section -->
-      <img src="images/dbs-campus.jpg" alt="DBS Campus" class="dbs-pic">
+      <img src="../assets/images/dbs-campus.jpg" alt="DBS Campus" class="dbs-pic">
       <!-- Copyright Credit -->
       <p class="image-credit">Image credit: <a href="https://studyabroadlife.org" target="_blank">Study Abroad Life</a></p>
       <p>Dublin Business School (DBS) offers a variety of undergraduate and postgraduate courses in the fields of computing, business, and other disciplines. It is known for its focus on practical learning, with a strong emphasis on industry relevance.</p>
@@ -82,12 +82,12 @@
     <p>© <span id="year"></span> Samantha Hannah Wynne. All rights reserved.</p>
     <p>Licensed under Creative Commons 4.0.</p>
   </footer>
-  
+
 
   <script>
     // Light/Dark mode toggle logic
     const themeToggle = document.getElementById("themeToggle");
-  
+
   // This checks the saved theme in localStorage and apply it when the page loads
   if (localStorage.getItem("theme") === "light") {
     document.documentElement.classList.add("new-theme");
@@ -110,7 +110,7 @@
       themeToggle.textContent = "🌙 Dark Mode";
     }
   });
-  
+
   // Smooth scroll to top
 const scrollTopBtn = document.getElementById("scrollTop");
 
@@ -131,7 +131,7 @@ window.scrollTo({ top: 0, behavior: "smooth" });
 document.getElementById("year").textContent = new Date().getFullYear();
 
   </script>
-  
+
 
 </body>
 </html>

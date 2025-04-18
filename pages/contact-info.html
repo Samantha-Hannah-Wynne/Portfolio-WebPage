@@ -12,9 +12,9 @@
 
   <!-- Google Fonts to make the text look pretty -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  
+
   <!-- This is linking the external CSS file where the styles are defined -->
-  <link rel="stylesheet" href="Style.css" />
+  <link rel="stylesheet" href="../assets/css/global-style.css" />
 </head>
 <body class="contact-body">
 
@@ -33,10 +33,10 @@
   <!-- Main Navigation -->
   <nav class="contact-nav">
     <ul>
-      <li><a href="index.html">Main Menu</a></li>
-      <li><a href="mainmenu.html">Home</a></li>
-      <li><a href="dbs.html">DBS</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <a href="../index.html" class="menu-item">Home</a>
+      <a href="university-info.html" class="menu-item">DBS</a>
+      <a href="poject-dashboard.html" class="menu-item">Projects</a>
+      <a href="contact-info.html" class="menu-item">Contact</a>
     </ul>
   </nav>
 
@@ -72,12 +72,12 @@
     <p>© <span id="year"></span> Samantha Hannah Wynne. All rights reserved.</p>
     <p>Licensed under Creative Commons 4.0.</p>
   </footer>
-  
+
 
   <script>
      // Light/Dark mode toggle logic
      const themeToggle = document.getElementById("themeToggle");
-  
+
   // This checks the saved theme in localStorage and apply it when the page loads
   if (localStorage.getItem("theme") === "light") {
     document.documentElement.classList.add("new-theme");
@@ -100,7 +100,7 @@
       themeToggle.textContent = "🌙 Dark Mode";
     }
   });
-  
+
   // Smooth scroll to top
 const scrollTopBtn = document.getElementById("scrollTop");
 
@@ -142,7 +142,7 @@ window.scrollTo({ top: 0, behavior: "smooth" });
       div.innerText = input;  // Convert any potentially dangerous characters into text
       return div.innerHTML;   // Return sanitized HTML (escaped text)
     }
-    // Automatically updates the copyright year to the current year 
+    // Automatically updates the copyright year to the current year
   document.getElementById("year").textContent = new Date().getFullYear();
 
   </script>
