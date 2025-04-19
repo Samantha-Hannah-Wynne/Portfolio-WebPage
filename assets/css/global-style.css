@@ -320,6 +320,26 @@ button:hover {
 }
 
 
+button.global-Home {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 1.5rem;
+  background-color: #88304E;
+  color: white;
+}
+
+button.global-Home:hover {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 1.5rem;
+  background-color: #3a3a3a;
+  color: white;
+}
+
+
+
 /* Base Styles */
 .index-body {
   margin: 0;
@@ -401,15 +421,6 @@ li {
   margin-bottom: 10px;
 }
 
-
-html, body {
-  height: 100%;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-}
 
 
 

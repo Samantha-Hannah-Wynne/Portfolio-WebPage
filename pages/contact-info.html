@@ -30,10 +30,13 @@
     <button id="scrollTop" aria-label="Scroll to Top">↑</button>
   </header>
 
+  <!-- Global Home button -->
+  <button id="global-home-btn" class="global-Home" aria-label="Return to Main page">🏚️</button>
+
   <!-- Main Navigation -->
   <nav class="contact-nav">
     <ul>
-      <a href="../index.html" class="menu-item">Home</a>
+      <a href="profile-dashboard.html" class="menu-item">Profile</a>
       <a href="university-info.html" class="menu-item">DBS</a>
       <a href="poject-dashboard.html" class="menu-item">Projects</a>
       <a href="contact-info.html" class="menu-item">Contact</a>
@@ -75,6 +78,12 @@
 
 
   <script>
+
+    // Return to Home button functionality
+    document.getElementById("global-home-btn").addEventListener("click", () => {
+      window.location.href = "../index.html"; // Redirect to the main page
+    });
+
      // Light/Dark mode toggle logic
      const themeToggle = document.getElementById("themeToggle");
 
