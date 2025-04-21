@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Toys & Treasures | TinkerTown Toys</title>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/shop-style.css" />
+  <!-- Magical Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="page-body">
+
+  <!-- Header -->
+  <header class="header">
+    <h1 class="title">TinkerTown Toys</h1>
+    <p class="subtitle">Where magic meets playtime!</p>
+
+    <!-- This button toggles between light and dark mode -->
+    <button id="themeToggle" aria-label="Toggle Light/Dark Mode">🌞 Light Mode</button>
+
+     <!-- Soft Scroll Button -->
+    <button id="scrollTop" aria-label="Scroll to Top">↑</button>
+  </header>
+
+  <!-- Global Home button -->
+  <button id="global-home-btn" class="global-Home" aria-label="Return to Main page">🏚️</button>
+
+  </header>
+
+  <!-- Navigation -->
+  <nav class="toys-page-nav">
+    <a href="shop-homepage.html" class="toys-nav-link">Home</a>
+    <a href="shop-services.html" class="toys-nav-link">Toys & Treasures</a>
+    <a href="shop-contact.html" class="toys-nav-link">Royal Requests</a>
+  </nav>
+
+  <!-- Main -->
+  <main class="main">
+
+    <!-- Intro Section -->
+    <section class="intro">
+      <h2>Our Royal Collection</h2>
+      <p>
+        Browse through our handpicked treasures – each toy is sprinkled with joy, love, and a pinch of pixie dust!
+      </p>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products">
+
+      <div class="product">
+        <img src="../assets/images/unicorn-pic.jpg" alt="Unicorn Plush Toy" />
+        <h3>Fluffy Unicorn</h3>
+        <p>A cuddly unicorn with sparkly hooves and a rainbow mane. Your perfect snuggle buddy!</p>
+      </div>
+
+      <div class="product">
+        <img src="../assets/images/blue plush-pic.jpg" alt="Enchanted Castle Playset" />
+        <h3>Enchanted Castle</h3>
+        <p>Build your fairy tale kingdom with this magical castle playset. Comes with mini princess figurines!</p>
+      </div>
+
+      <div class="product">
+        <img src="../assets/images/fairy dress-pic.jpg" alt="Princess Fairy Dress" />
+        <h3>Fairy Princess Dress</h3>
+        <p>Twirl into a world of wonder in this glittery, comfy dress made for magical adventures.</p>
+      </div>
+
+      <div class="product">
+        <img src="../assets/images/fairy wand-pic.jpg" alt="Magic Wand Toy" />
+        <h3>Twinkle Wand</h3>
+        <p>Wave it and watch the sparkle! Comes with sounds and light-up gems.</p>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© <span id="year"></span> TinkerTown Toys. All sparkle reserved ✨</p>
+  </footer>
+
+  <script>
+
+    // Return to Home button functionality
+    document.getElementById("global-home-btn").addEventListener("click", () => {
+      window.location.href = "../index.html"; // Redirect to the main page
+    });
+
+    // Light/Dark mode toggle logic
+    const themeToggle = document.getElementById("themeToggle");
+
+  // This checks the saved theme in localStorage and apply it when the page loads
+  if (localStorage.getItem("theme") === "light") {
+    document.documentElement.classList.add("new-theme");
+    themeToggle.textContent = "🌞 Light Mode";
+  } else {
+    themeToggle.textContent = "🌙 Dark Mode";
+  }
+
+  // When the button is clicked, toggle between light and dark mode
+  themeToggle.addEventListener("click", () => {
+    const html = document.documentElement;
+
+    if (html.classList.contains("new-theme")) {
+      html.classList.remove("new-theme");
+      localStorage.setItem("theme", "dark");
+      themeToggle.textContent = "🌙 Dark Mode";
+    } else {
+      html.classList.add("new-theme");
+      localStorage.setItem("theme", "light");
+      themeToggle.textContent = "🌞 Light Mode";
+    }
+  });
+
+  // Smooth scroll to top
+const scrollTopBtn = document.getElementById("scrollTop");
+
+// This shows button when scrolling down
+window.addEventListener("scroll", () => {
+if (window.scrollY > 200) {
+  scrollTopBtn.style.display = "block";
+} else {
+  scrollTopBtn.style.display = "none";
+}
+});
+
+scrollTopBtn.addEventListener("click", () => {
+window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// Automatically updates the copyright year to the current year
+document.getElementById("year").textContent = new Date().getFullYear();
+
+  </script>
+
+</body>
+</html>

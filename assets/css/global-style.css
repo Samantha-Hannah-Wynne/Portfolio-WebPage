@@ -338,6 +338,57 @@ button.global-Home:hover {
   color: white;
 }
 
+.new-theme button.global-Home {
+  background: linear-gradient(to right, #fcddec, #e1c8e9);
+  color: #4a4a4a;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.new-theme button.global-Home:hover {
+  background: #F7374F; /* Solid color on hover */
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.projects-main {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.projects-section {
+  text-align: center;
+}
+
+.projects-section h2 {
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+  color: #F7374F;
+}
+
+.new-theme .projects-section h2 {
+  color: #88304E;
+}
+
+.menu-item {
+  display: block;
+  margin: 0.5rem auto;
+  width: fit-content;
+  padding: 10px 20px;
+  background-color: #F7374F;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.menu-item:hover {
+  background-color: #88304E;
+}
 
 
 /* Base Styles */

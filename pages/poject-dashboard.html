@@ -1,52 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta tags to make the page suitable for mobile too -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-  <!-- Title for the webpage -->
+  <meta name="description" content="Explore my web development and programming projects including coursework and personal creations." />
+  <meta name="keywords" content="Projects, Web Development, Portfolio, DBS, JavaScript, HTML, CSS" />
   <title>My Projects</title>
-
-  <!-- This is linking the external CSS file where the styles are defined -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="../assets/css/global-style.css" />
 </head>
-<body class="index-body">
 
-    <!-- This is the header section with a title and a theme toggle button -->
-  <header class="index-header">
+<body class="dbs-page-body">
 
-    <!-- Back arrow button -->
-    <a href="../index.html" class="back-button" aria-label="Back to Home">←</a>
-
-    <h1>My Projects</h1>
-    <p>Take a look at some of my recent work</p>
-
-    <!-- This button toggles between light and dark mode -->
+  <header class="dbs-page-header">
+    <h1>Project Portfolio</h1>
+    <p>A showcase of my academic and personal web projects</p>
     <button id="themeToggle" aria-label="Toggle Light/Dark Mode">🌞 Light Mode</button>
+    <button id="scrollTop" aria-label="Scroll to Top">↑</button>
   </header>
 
-  <!-- Global Home button -->
   <button id="global-home-btn" class="global-Home" aria-label="Return to Main page">🏚️</button>
 
-  <main class="index-main">
-    <!-- This Links to different pages of the projects -->
-    <a href="project1/index.html" class="menu-item">Project 1</a>
-    <a href="events-dashboard.html" class="menu-item">DBS Events</a>
-    <a href="project3/index.html" class="menu-item">Project 3</a>
+  <nav class="dbs-page-nav">
+    <ul>
+      <a href="profile-dashboard.html" class="menu-item">Profile</a>
+      <a href="university-info.html" class="menu-item">DBS</a>
+      <a href="poject-dashboard.html" class="menu-item">Projects</a>
+      <a href="contact-info.html" class="menu-item">Contact</a>
+    </ul>
+  </nav>
+
+  <main class="dbs-page-main">
+
+    <!-- Continuous Assessment Section -->
+    <section class="dbs-page-section">
+      <h2>Continuous Assessment Project</h2>
+      <img src="../assets/images/project-shop.jpg" alt="TinkerTown Toys Website" class="dbs-pic" />
+      <p class="image-credit">Image credit: <a href="https://unsplash.com" target="_blank">Unsplash</a></p>
+      <p>
+        This project was created for my Continuous Assessment in the Introduction to Web Development module. It is a fictional business website for <strong>TinkerTown Toys</strong>, featuring a homepage, services page, and contact form. Key features include:
+      </p>
+      <ul>
+        <li>Theme toggle (light/dark mode)</li>
+        <li>Language translation (English, French, Tamil)</li>
+        <li>Form validation with JavaScript</li>
+        <li>Responsive design using semantic HTML and CSS</li>
+      </ul>
+      <a href="shop-homepage.html" class="menu-item">View Project</a>
+    </section>
+
+    <!-- Other Projects Section -->
+    <section class="dbs-page-section">
+      <h2>Other Projects</h2>
+
+      <!-- DBS Events Dashboard -->
+      <div class="dbs-sub-section">
+        <h3>DBS Events Dashboard</h3>
+        <img src="../assets/images/project-events.jpg" alt="Events Dashboard" class="dbs-pic" />
+        <p class="image-credit">Image credit: <a href="https://pexels.com" target="_blank">Pexels</a></p>
+        <p>
+          An interactive events dashboard showcasing upcoming happenings at DBS. Built as a personal project, it features:
+        </p>
+        <ul>
+          <li>Card-based event layout</li>
+          <li>Search and filter functionality using JavaScript</li>
+          <li>Clean and accessible interface</li>
+        </ul>
+        <a href="events-dashboard.html" class="menu-item">View Project</a>
+      </div>
+
+    </section>
+
   </main>
 
-  <!-- Footer with copyright info and the license -->
   <footer>
     <p>© <span id="year"></span> Samantha Hannah Wynne. All rights reserved.</p>
     <p>Licensed under Creative Commons 4.0.</p>
   </footer>
 
   <script>
-    // Light/Dark mode toggle logic
-    const themeToggle = document.getElementById("themeToggle");
+    // Home button
+    document.getElementById("global-home-btn").addEventListener("click", () => {
+      window.location.href = "../index.html";
+    });
 
-    // This checks the saved theme in localStorage and apply it when the page loads
+    // Theme toggle
+    const themeToggle = document.getElementById("themeToggle");
     if (localStorage.getItem("theme") === "light") {
       document.documentElement.classList.add("new-theme");
       themeToggle.textContent = "🌙 Dark Mode";
@@ -54,10 +93,8 @@
       themeToggle.textContent = "🌞 Light Mode";
     }
 
-    // When the button is clicked, toggle between light and dark mode
     themeToggle.addEventListener("click", () => {
       const html = document.documentElement;
-
       if (html.classList.contains("new-theme")) {
         html.classList.remove("new-theme");
         localStorage.setItem("theme", "dark");
@@ -69,9 +106,18 @@
       }
     });
 
-    // Automatically updates the copyright year to the current year
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // Scroll to top
+    const scrollTopBtn = document.getElementById("scrollTop");
+    window.addEventListener("scroll", () => {
+      scrollTopBtn.style.display = window.scrollY > 200 ? "block" : "none";
+    });
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
 
+    // Dynamic year
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
