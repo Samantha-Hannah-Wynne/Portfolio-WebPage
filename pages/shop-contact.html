@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Meta tags for proper rendering and mobile responsiveness -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Title for the webpage -->
   <title>Contact Us | TinkerTown Toys</title>
+  <meta name="description" content="Contact TinkerTown Toys for inquiries about our magical toys and treasures. We're here to help you make your toy dreams come true!">
+  <meta name="keywords" content="TinkerTown Toys contact, toy inquiries, magical toys, customer support">
+  <meta name="author" content="TinkerTown Toys">
+  <!-- Google Fonts to make the text look pretty -->
   <link rel="stylesheet" href="../assets/css/shop-style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Quicksand:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Quicksand:wght@400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
+  <!-- This is the header section with the title, a tagline, and a theme toggle button -->
   <header class="header">
     <h1 class="title">TinkerTown Toys</h1>
     <p class="subtitle">Book your magical toy experience!</p>
@@ -15,46 +22,54 @@
     <!-- This button toggles between light and dark mode -->
     <button id="themeToggle" aria-label="Toggle Light/Dark Mode">🌞 Light Mode</button>
 
-     <!-- Soft Scroll Button -->
+    <!-- Soft Scroll Button -->
     <button id="scrollTop" aria-label="Scroll to Top">↑</button>
   </header>
 
   <!-- Global Home button -->
   <button id="global-home-btn" class="global-Home" aria-label="Return to Main page">🏚️</button>
 
-  </header>
-
+  <!-- Navigation bar with links to other pages -->
   <nav class="toys-page-nav">
     <a href="shop-homepage.html" class="toys-nav-link">Home</a>
     <a href="shop-services.html" class="toys-nav-link">Toys & Treasures</a>
     <a href="shop-contact.html" class="toys-nav-link">Royal Requests</a>
   </nav>
 
+  <!-- Main content section with a contact form and description -->
   <main class="main">
-    <section class="contact-form">
-      <h2>Get in Touch</h2>
-      <p class="contact-description">
-        Whether you're booking a party or have a question, we're here to sprinkle some magic! ✨
-      </p>
+      <section class="contact-form">
+        <h2>Get in Touch</h2>
+        <p class="contact-description">
+          We would love to hear from you! Whether you have a question about our toys, need assistance with your order!✨
+        </p>
+        <form id="bookingForm" action="#" method="POST">
+          <div class="form-group">
+            <label for="name">Name<span>*</span></label>
+            <input type="text" id="name" name="name" required placeholder="Your full name" />
+          </div>
 
-      <form id="bookingForm" novalidate>
-        <label for="name">Name<span>*</span></label>
-        <input type="text" id="name" name="name" required placeholder="Your full name" />
+          <div class="form-group">
+            <label for="email">Email<span>*</span></label>
+            <input type="email" id="email" name="email" required placeholder="your@email.com" />
+          </div>
 
-        <label for="email">Email<span>*</span></label>
-        <input type="email" id="email" name="email" required placeholder="your@email.com" />
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Optional" pattern="^\+?[0-9\s\-]{7,15}$" />
+          </div>
 
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" placeholder="Optional" pattern="^\+?[0-9\s\-]{7,15}$" />
+          <div class="form-group">
+            <label for="message">Message / Booking Details<span>*</span></label>
+            <textarea id="message" name="message" rows="5" required placeholder="Tell us what you're looking for..."></textarea>
+          </div>
 
-        <label for="message">Message / Booking Details<span>*</span></label>
-        <textarea id="message" name="message" rows="5" required placeholder="Tell us what you're looking for..."></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+    </main>
 
-        <button type="submit">Send Message</button>
-      </form>
-    </section>
-  </main>
-
+  <!-- Footer with copyright info and the license -->
   <footer class="footer">
     <p>&copy; 2025 TinkerTown Toys. All sparkles reserved ✨.</p>
   </footer>
@@ -68,30 +83,30 @@ document.getElementById("global-home-btn").addEventListener("click", () => {
 });
 
 // Light/Dark mode toggle logic
-const themeToggle = document.getElementById("themeToggle");
+    const themeToggle = document.getElementById("themeToggle");
 
-// This checks the saved theme in localStorage and apply it when the page loads
-if (localStorage.getItem("theme") === "light") {
-  document.documentElement.classList.add("new-theme");
-  themeToggle.textContent = "🌞 Light Mode";
-} else {
-  themeToggle.textContent = "🌙 Dark Mode";
-}
-
-// When the button is clicked, toggle between light and dark mode
-themeToggle.addEventListener("click", () => {
-  const html = document.documentElement;
-
-  if (html.classList.contains("new-theme")) {
-    html.classList.remove("new-theme");
-    localStorage.setItem("theme", "dark");
-    themeToggle.textContent = "🌙 Dark Mode";
-  } else {
-    html.classList.add("new-theme");
-    localStorage.setItem("theme", "light");
+  // This checks the saved theme in localStorage and apply it when the page loads
+  if (localStorage.getItem("theme") === "light") {
+    document.documentElement.classList.add("new-theme");
     themeToggle.textContent = "🌞 Light Mode";
+  } else {
+    themeToggle.textContent = "🌙 Dark Mode";
   }
-});
+
+  // When the button is clicked, toggle between light and dark mode
+  themeToggle.addEventListener("click", () => {
+    const html = document.documentElement;
+
+    if (html.classList.contains("new-theme")) {
+      html.classList.remove("new-theme");
+      localStorage.setItem("theme", "dark");
+      themeToggle.textContent = "🌙 Dark Mode";
+    } else {
+      html.classList.add("new-theme");
+      localStorage.setItem("theme", "light");
+      themeToggle.textContent = "🌞 Light Mode";
+    }
+  });
 
 // Smooth scroll to top
 const scrollTopBtn = document.getElementById("scrollTop");
@@ -109,16 +124,32 @@ scrollTopBtn.addEventListener("click", () => {
 window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-// Automatically updates the copyright year to the current year
-document.getElementById("year").textContent = new Date().getFullYear();
+// XSS Protection and Form Validation
+const commentForm = document.getElementById("commentForm");
+commentForm.addEventListener("submit", (event) => {
+  event.preventDefault();
 
-    document.getElementById("bookingForm").addEventListener("submit", function (e) {
-      const form = e.target;
-      if (!form.checkValidity()) {
-        e.preventDefault();
-        alert("Please fill in all required fields correctly!");
-      }
-    });
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const phone = document.getElementById("phone").value;
+  const message = sanitizeInput(document.getElementById("message").value);
+
+  if (!email.includes("@")) {
+    alert("Invalid email address!");
+    return;
+  }
+
+  alert(`Thank you, ${name}, for your message: ${message}`);
+});
+
+  // Function to sanitize user input
+  function sanitizeInput(input) {
+    let div = document.createElement("div");
+    div.innerText = input;  // Convert any potentially dangerous characters into text
+    return div.innerHTML;   // Return sanitized HTML (escaped text)
+  }
+
   </script>
 </body>
 </html>
+

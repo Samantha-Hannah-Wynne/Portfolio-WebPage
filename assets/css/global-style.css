@@ -85,12 +85,14 @@
 
 /* dbs picture styling*/
 .dbs-pic {
+  display: block;
   max-width: 100%;
   height: auto;
+  margin: 0 auto 20px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-  margin-bottom: 20px;
 }
+
 
 
 /* Base Styles */
@@ -188,8 +190,9 @@
 }
 
 .image-credit {
-  font-size: 0.75rem;
-  color: #928f8f;
+  font-size: 0.7em;
+  color: #555;
+  text-align: center;
   margin-top: 5px;
 }
 
@@ -700,22 +703,6 @@ body.new-theme .close-btn {
   color: #333;
 }
 
-.back-button {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  font-size: 1.5rem;
-  text-decoration: none;
-  color: #F7374F;
-  background-color: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.back-button:hover {
-  background-color: none;
-}
 
 
 @media (max-width: 600px) {

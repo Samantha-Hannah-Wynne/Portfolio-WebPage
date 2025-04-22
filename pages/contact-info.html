@@ -110,7 +110,7 @@
     }
   });
 
-  // Smooth scroll to top
+// Smooth scroll to top
 const scrollTopBtn = document.getElementById("scrollTop");
 
 // This shows button when scrolling down
@@ -126,33 +126,32 @@ scrollTopBtn.addEventListener("click", () => {
 window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
+// XSS Protection and Form Validation
+const commentForm = document.getElementById("commentForm");
+commentForm.addEventListener("submit", (event) => {
+  event.preventDefault();
 
-    // XSS Protection and Form Validation
-    const commentForm = document.getElementById("commentForm");
-    commentForm.addEventListener("submit", (event) => {
-      event.preventDefault();
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const subject = document.getElementById("subject").value;
+  const message = sanitizeInput(document.getElementById("message").value);
 
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const subject = document.getElementById("subject").value;
-      const message = sanitizeInput(document.getElementById("message").value);
+  if (!email.includes("@")) {
+    alert("Invalid email address!");
+    return;
+  }
 
-      if (!email.includes("@")) {
-        alert("Invalid email address!");
-        return;
-      }
+  alert(`Thank you, ${name}, for your message: ${message}`);
+});
 
-      alert(`Thank you, ${name}, for your message: ${message}`);
-    });
-
-    // Function to sanitize user input
-    function sanitizeInput(input) {
-      let div = document.createElement("div");
-      div.innerText = input;  // Convert any potentially dangerous characters into text
-      return div.innerHTML;   // Return sanitized HTML (escaped text)
-    }
-    // Automatically updates the copyright year to the current year
-  document.getElementById("year").textContent = new Date().getFullYear();
+// Function to sanitize user input
+function sanitizeInput(input) {
+  let div = document.createElement("div");
+  div.innerText = input;  // Convert any potentially dangerous characters into text
+  return div.innerHTML;   // Return sanitized HTML (escaped text)
+}
+// Automatically updates the copyright year to the current year
+document.getElementById("year").textContent = new Date().getFullYear();
 
   </script>
 

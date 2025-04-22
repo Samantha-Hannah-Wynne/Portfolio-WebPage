@@ -254,6 +254,10 @@ scrollTopBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
+// Hide the selected language button
+document.querySelectorAll(".lang-btn").forEach(button => button.style.display = "inline-block");
+document.getElementById("btn-en").style.display = "none"; // Hide the English button by default
+
 // Automatically updates the copyright year to the current year
 document.getElementById("year").textContent = new Date().getFullYear();
 </script>
