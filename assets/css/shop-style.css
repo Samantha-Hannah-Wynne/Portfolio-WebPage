@@ -1,0 +1,1062 @@
+/* ========== Base Styling ========== */
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
+    color: #4b2e83;
+  }
+  
+  /* ========== Header ========== */
+  .header,
+  .toys-page-header {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(to right, #ffb6c1, #ffa07a);
+    color: white;
+    border-bottom: 4px dashed #ffc0cb;
+  }
+  
+  .title,
+  .toys-page-title {
+    font-family: 'Cookie', cursive;
+    font-size: 3rem;
+    margin: 0;
+  }
+  
+  .subtitle,
+  .toys-page-subtitle {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    letter-spacing: 1px;
+  }
+  
+  /* ========== Navigation ========== */
+  .nav,
+  .toys-page-nav{
+    display: flex;
+    justify-content: center;
+    background-color: #fff5f8;
+    padding: 1rem;
+    gap: 2rem;
+    border-bottom: 2px solid #f8c8dc;
+  }
+  
+  .nav a,
+  .toys-nav-link {
+    text-decoration: none;
+    color: #d63384;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    transition: background-color 0.3s, color 0.3s ease;
+  }
+  
+  .nav a:hover,
+  .nav .active,
+  .toys-nav-link:hover {
+    background-color: #ffccee;
+    color: #a020f0;
+    text-shadow: 0 0 5px #ffd1dc;
+  }
+  
+  /* ========== Main Content ========== */
+  .main,
+  .toys-page-main {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .intro h2,
+  .toys-welcome-title {
+    font-family: 'Cookie', cursive;
+    font-size: 2.5rem;
+    color: #db7093;
+  }
+  
+  .intro p,
+  .toys-description {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    color: #6a0dad;
+    line-height: 1.6;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* ========== Toys Image ========== */
+  .toys-img {
+    width: 90%;
+    max-width: 800px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(255, 182, 193, 0.6);
+    margin-bottom: 2rem;
+  }
+
+  .image--credit {
+    font-size: 0.9em;
+    color: #555;
+    text-align: center;
+    margin-top: 5px;
+  }
+  
+  /* ========== Intro Section Box ========== */
+  .toys-intro-section {
+    background-color: #fff0f5;
+    padding: 2rem;
+    margin: auto;
+    max-width: 700px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(255, 192, 203, 0.5);
+  }
+  
+  /* ========== Products Grid ========== */
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .product {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between; /* Ensure spacing between content and button */
+    height: 100%; /* Ensure uniform height for all product containers */
+    background-color: #fff0f8;
+    border: 2px solid #ffcce6;
+    border-radius: 20px;
+    padding: 1rem;
+    box-shadow: 0 6px 18px rgba(255, 182, 193, 0.5);
+    transition: transform 0.3s ease;
+  }
+  
+  .product:hover {
+    transform: translateY(-5px);
+  }
+  
+  .product img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+  }
+  
+  .product h3 {
+    color: #d63384;
+    font-size: 1.4rem;
+    margin-top: 1rem;
+    font-family: 'Quicksand', sans-serif;
+  }
+  
+  .product p {
+    font-size: 1rem;
+    color: #5a275a;
+    margin-top: 0.5rem;
+  }
+  
+  /* ========== Footer ========== */
+  .footer,
+  .toys-page-footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #ffeef8;
+    color: #b03060;
+    border-top: 2px dashed #ffc0cb;
+    font-size: 0.9rem;
+    margin-top: 3rem;
+  }
+  
+  /* ========== Responsive ========== */
+  @media (max-width: 600px) {
+    .header,
+    .main,
+    .toys-page-header,
+    .toys-page-main {
+      padding: 1rem;
+    }
+  
+    .title,
+    .toys-page-title {
+      font-size: 2.2rem;
+    }
+  
+    .nav a,
+    .toys-nav-link {
+      font-size: 0.95rem;
+    }
+  }
+  
+  /* ========== Global Styles ========== */
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
+    color: #4b2e83;
+  }
+  
+/* ========== Header ========== */
+.header {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(to right, #ffb6c1, #ffa07a);
+  color: white;
+  border-bottom: 4px dashed #ffc0cb;
+}
+
+.title {
+  font-family: 'Cookie', cursive;
+  font-size: 3rem;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  letter-spacing: 1px;
+}
+
+/* ========== Navigation ========== */
+.nav {
+  display: flex;
+  justify-content: center;
+  background-color: #fff5f8;
+  padding: 1rem;
+  gap: 2rem;
+  border-bottom: 2px solid #f8c8dc;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #d63384;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav a:hover,
+.nav .active {
+  background-color: #ffccee;
+  color: #a020f0;
+  text-shadow: 0 0 5px #ffd1dc;
+}
+
+/* ========== Main Content ========== */
+.main {
+  padding: 2rem;
+  text-align: center;
+}
+
+.intro h2 {
+  font-family: 'Cookie', cursive;
+  font-size: 2.5rem;
+  color: #db7093;
+}
+
+.intro p {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  color: #6a0dad;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ========== Products Section ========== */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+.product {
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  justify-content: space-between; /* Ensure spacing between content and button */
+  height: 100%; /* Ensure uniform height for all product containers */
+  background-color: #fff0f8;
+  border: 2px solid #ffcce6;
+  border-radius: 20px;
+  padding: 1rem;
+  box-shadow: 0 6px 18px rgba(255, 182, 193, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+.product h3 {
+  color: #d63384;
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.product p {
+  font-size: 1rem;
+  color: #5a275a;
+  margin-top: 0.5rem;
+}
+
+/* ========== Contact Form ========== */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto; /* Center the form horizontally */
+  padding: 2rem;
+  background-color: #fff0f5;
+  border: 2px solid #ffcce6;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(255, 182, 193, 0.4);
+}
+
+.contact-form h2 {
+  font-family: 'Cookie', cursive;
+  color: #d63384;
+  margin-bottom: 1rem;
+}
+
+.contact-form label {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  color: #6a0dad;
+  text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ffc0cb;
+  border-radius: 10px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1rem;
+  display: block;
+  margin: 0 auto; /* Center the text boxes */
+}
+
+.contact-form input:invalid,
+.contact-form textarea:invalid {
+  border-color: #ff4d6d;
+  background-color: #fff5f8;
+}
+
+.contact-form button {
+  margin-top: 1.5rem;
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #ff1493;
+}
+
+/* ========== Footer ========== */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #ffeef8;
+  color: #b03060;
+  border-top: 2px dashed #ffc0cb;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 600px) {
+  .header,
+  .main {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .nav a {
+    font-size: 0.95rem;
+  }
+}
+/* ========== Theme Toggle Button ========== */
+#themeToggle {
+  background-color: #ffd9ec;
+  color: #8b008b;
+  border: 2px solid #ffb6c1;
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(255, 182, 193, 0.5);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#themeToggle:hover {
+  background-color: #ffb6c1;
+  transform: scale(1.05);
+}
+
+/* ========== Scroll to Top Button ========== */
+#scrollTop {
+  display: none;
+  position: fixed;
+  bottom: 5rem;
+  right: 1.5rem;
+  background-color: #ffefff;
+  color: #8a2be2;
+  border: 2px solid #dda0dd;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(218, 112, 214, 0.4);
+  cursor: pointer;
+  z-index: 999;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#scrollTop:hover {
+  background-color: #ffc0cb;
+  transform: scale(1.1);
+}
+
+/* ========== Home Button ========== */
+#global-home-btn {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: #ffe0f0;
+  color: #c71585;
+  padding: 0.5rem 1.2rem;
+  border: 2px solid #fcb0d6;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(255, 192, 203, 0.5);
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+}
+
+#global-home-btn:hover {
+  background-color: #ffccee;
+  transform: scale(1.05);
+}
+
+/* ========== Global Styles ========== */
+body {
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
+  color: #4b2e83;
+}
+
+/* ========== Dark Mode Overrides ========== */
+.new-theme body {
+  background: linear-gradient(to bottom, #1a0028, #2e003e);
+  color: #f8dffb;
+}
+
+.new-theme .header {
+  background: linear-gradient(to right, #4b006e, #5e2a84);
+  color: #f8e1ff;
+  border-bottom: 4px dashed #872b7b;
+}
+
+.new-theme .nav {
+  background-color: #2c003f;
+  border-bottom: 2px solid #6a0077;
+}
+
+.new-theme .nav a {
+  color: #e0b3ff;
+}
+
+.new-theme .nav a:hover,
+.new-theme .nav .active {
+  background-color: #5b1d63;
+  color: #ffe0ff;
+  text-shadow: 0 0 5px #ffbdf7;
+}
+
+.new-theme .main {
+  color: #f3d8ff;
+}
+
+.new-theme .intro h2 {
+  color: #ddaaff;
+}
+
+.new-theme .intro p {
+  color: #dbc5ff;
+}
+
+.new-theme .products {
+  background-color: transparent;
+}
+
+.new-theme .product {
+  background-color: #3d004f;
+  border-color: #872b7b;
+  box-shadow: 0 6px 18px rgba(208, 134, 255, 0.5);
+}
+
+.new-theme .product h3 {
+  color: #e0b3ff;
+}
+
+.new-theme .product p {
+  color: #ffdcff;
+}
+
+.new-theme .footer {
+  background-color: #310035;
+  color: #e6cfff;
+  border-top: 2px dashed #872b7b;
+}
+
+/* ========== Contact Page Overrides ========== */
+.new-theme .contact-section {
+  background-color: transparent;
+  color: #f8dffb;
+}
+
+.new-theme form input,
+.new-theme form textarea {
+  background-color: #4e2b5a;
+  color: #f0e6f6;
+  border: 1px solid #bb77d1;
+}
+
+.new-theme form button {
+  background-color: #872b7b;
+  color: #fff0f5;
+  border: none;
+}
+
+.new-theme form button:hover {
+  background-color: #a83a99;
+}
+
+/* ========== Header ========== */
+.header {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(to right, #ffb6c1, #ffa07a);
+  color: white;
+  border-bottom: 4px dashed #ffc0cb;
+  position: relative;
+}
+
+.title {
+  font-family: 'Cookie', cursive;
+  font-size: 3rem;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  letter-spacing: 1px;
+}
+
+#themeToggle {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #ffffffcc;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #6a0dad;
+}
+
+.new-theme #themeToggle {
+  background-color: #4e2b5a;
+  color: #ffccf9;
+}
+
+/* ========== Home Button ========== */
+#global-home-btn {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  background-color: #ffccf9;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #6a0dad;
+}
+
+.new-theme #global-home-btn {
+  background-color: #663366;
+  color: #ffe6ff;
+}
+
+/* ========== Navigation ========== */
+.nav {
+  display: flex;
+  justify-content: center;
+  background-color: #fff5f8;
+  padding: 1rem;
+  gap: 2rem;
+  border-bottom: 2px solid #f8c8dc;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #d63384;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav a:hover,
+.nav .active {
+  background-color: #ffccee;
+  color: #a020f0;
+  text-shadow: 0 0 5px #ffd1dc;
+}
+
+/* ========== Main Content ========== */
+.main {
+  padding: 2rem;
+  text-align: center;
+}
+
+.intro h2 {
+  font-family: 'Cookie', cursive;
+  font-size: 2.5rem;
+  color: #db7093;
+}
+
+.intro p {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  color: #6a0dad;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ========== Products Section ========== */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+.product {
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  justify-content: space-between; /* Ensure spacing between content and button */
+  height: 100%; /* Ensure uniform height for all product containers */
+  background-color: #fff0f8;
+  border: 2px solid #ffcce6;
+  border-radius: 20px;
+  padding: 1rem;
+  box-shadow: 0 6px 18px rgba(255, 182, 193, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+.product h3 {
+  color: #d63384;
+  font-size: 1.4rem;
+  margin-top: 1rem;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.product p {
+  font-size: 1rem;
+  color: #5a275a;
+  margin-top: 0.5rem;
+}
+
+/* ========== Footer ========== */
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #ffeef8;
+  color: #b03060;
+  border-top: 2px dashed #ffc0cb;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+}
+
+
+/* ========== Responsive ========== */
+@media (max-width: 600px) {
+  .header,
+  .main {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .nav a {
+    font-size: 0.95rem;
+  }
+}
+
+
+/* Scroll to top button */
+.new-theme #scrollTop {
+  background-color: #4c0070;
+  color: #f8dffb;
+  border: 2px solid #944f9e;
+}
+
+.new-theme .toys-page-body {
+  background: linear-gradient(to bottom, #1a0028, #2e003e);
+  color: #f8dffb;
+}
+
+.new-theme .toys-page-header {
+  background: linear-gradient(to right, #4b006e, #5e2a84);
+  color: #f8e1ff;
+  border-bottom: 4px dashed #872b7b;
+}
+
+.new-theme .toys-page-nav {
+  background-color: #2c003f;
+  border-bottom: 2px solid #6a0077;
+}
+
+.new-theme .toys-page-nav .toys-nav-link {
+  color: #e0b3ff;
+}
+
+.new-theme .toys-page-nav .toys-nav-link:hover,
+.new-theme .toys-page-nav .toys-nav-link.active {
+  background-color: #5b1d63;
+  color: #ffe0ff;
+  text-shadow: 0 0 5px #ffbdf7;
+}
+
+.new-theme .toys-page-main {
+  color: #f3d8ff;
+}
+
+.new-theme .toys-welcome-title {
+  color: #ddaaff;
+}
+
+.new-theme .toys-description {
+  color: #dbc5ff;
+}
+
+.new-theme .toys-page-footer {
+  background-color: #310035;
+  color: #e6cfff;
+  border-top: 2px dashed #872b7b;
+}
+
+.new-theme .toys-intro-section {
+  background-color: #3d004f;
+  color: #f8dffb;
+  border: 2px solid #872b7b;
+  box-shadow: 0 4px 15px rgba(208, 134, 255, 0.5);
+}
+
+.new-theme .contact-form {
+  background-color: #3d004f;
+  color: #f8dffb;
+  border: 2px solid #872b7b;
+  box-shadow: 0 4px 15px rgba(208, 134, 255, 0.5);
+}
+
+.new-theme .contact-form input,
+.new-theme .contact-form textarea {
+  background-color: #4e2b5a;
+  color: #f0e6f6;
+  border: 1px solid #bb77d1;
+}
+
+.new-theme .contact-form input::placeholder,
+.new-theme .contact-form textarea::placeholder {
+  color: #d8bfe8;
+}
+
+.new-theme .contact-form button {
+  background-color: #872b7b;
+  color: #fff0f5;
+  border: none;
+}
+
+.new-theme .contact-form button:hover {
+  background-color: #a83a99;
+}
+
+/* Base dropdown container styling */
+.language-dropdown {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 0.5rem;
+margin: 1rem auto;
+font-family: 'Quicksand', sans-serif;
+}
+
+/* Label styling */
+.language-label {
+font-weight: 600;
+color: #5b2c6f; /* Royal purple for light theme */
+}
+
+/* Select dropdown styling */
+#language-select {
+padding: 8px 12px;              
+border-radius: 20px;
+border: 2px solid #ffd9ec;
+background-color: #ffd9ec;
+color: #5b2c6f;
+font-weight: 600;
+font-size: 1rem;
+cursor: pointer;
+box-shadow: 0 4px 6px rgba(235, 150, 218, 0.3);
+transition: all 0.3s ease;
+}
+
+/* Hover and focus */
+#language-select:hover,
+#language-select:focus {
+border-color: #d47ac7;
+background-color: #ffe3f0;
+outline: none;
+}
+
+/* DARK THEME */
+.new-theme .language-label {
+color: #ffe3f0; /* Light pink text */
+}
+
+.new-theme #language-select {
+background-color: #3b1c4a; /* Deep purple */
+color: #fce4f9;
+border-color: #a76cad;
+box-shadow: 0 4px 6px rgba(80, 20, 97, 0.5);
+}
+
+.new-theme #language-select:hover,
+.new-theme #language-select:focus {
+background-color: #51295f;
+border-color: #cc99dd;
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal content */
+.modal-content {
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 5px;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Light Mode */
+body:not(.new-theme) .modal-content {
+  background-color: #ffc0cb;
+  color: #51295f;
+}
+
+/* Dark Mode */
+body.new-theme .modal-content {
+  background-color: #51295f;
+  color: #0c0101;
+}
+
+/* Close Button Styling */
+.close-btn {
+  font-size: 30px;
+  font-weight: bold;
+  color: #ecdbdb;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+/* Close Button on Dark Mode */
+body.new-theme .close-btn {
+  color: #fff;
+}
+
+/* Hover effect for the close button */
+.close-btn:hover {
+  color: red;
+}
+
+
+
+/* Styling for the Visit Counter */
+#visit_counter {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #872b7b;
+  padding: 10px;
+  background-color: #ffc0cb;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000; /* Makes sure it's above other content */
+  transition: background-color 0.3s ease;
+}
+
+/* Dark mode adjustments for the Visit Counter */
+.new-theme #visit_counter {
+  background-color: #3b1c4a;
+  color: #cc99dd;
+}
+
+.filter-section {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.filter-label {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+}
+
+#product-filter {
+  padding: 0.4rem 0.8rem;
+  border-radius: 12px;
+  font-family: 'Quicksand', sans-serif;
+  border: 2px solid #d19ecb;
+  background-color: #fff0fb;
+  color: #7d3681;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+#product-filter:hover {
+  background-color: #f9d8f5;
+  cursor: pointer;
+}
+/* Basic styling for the "Coming Soon" page */
+.coming-soon {
+  padding: 20px;
+  text-align: center;
+}
+
+.coming-soon h2 {
+  font-size: 2rem;
+  color: #ff1493;
+  margin-bottom: 20px;
+}
+
+.coming-soon p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.coming-soon ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.coming-soon li {
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+.coming-soon .back-home {
+  background-color: #ff1493;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.coming-soon .back-home:hover {
+  background-color: #ff69b4;
+}
+/* Buy Now Button Styles */
+.buy-now {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #7d3681; /* Pink color for the button */
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s ease;
+  margin-top: auto; /* Push the button to the bottom */
+  align-self: center; /* Center the button horizontally */
+}
+
+.buy-now:hover {
+  background-color: #3b1c4a; /* Darker pink when hovered */
+  transform: translateY(-3px); /* Small lifting effect */
+}
+
+.buy-now:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(232, 74, 95, 0.8); /* Focus effect */
+}
+
+.buy-now:active {
+  background-color: #3b1c4a; /* Even darker pink when clicked */
+  transform: translateY(0); /* Reset lifting effect */
+}

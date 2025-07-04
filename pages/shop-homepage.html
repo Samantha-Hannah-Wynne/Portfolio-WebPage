@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta tags for proper rendering and mobile responsiveness -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+    <!-- SEO meta tags -->
+  <meta name="description" content="Explore TinkerTown Toys' magical collection of plush toys, fairy wands, and princess dresses. Perfect for kids and dreamers!">
+  <meta name="keywords" content="TinkerTown Toys, plush toys, fairy wands, princess dresses, magical toys">
+  <meta name="author" content="TinkerTown Toys">
+  
+  <!-- Title of the web page -->
+  <title>TinkerTown Toys</title>
+
+  <!-- Link to external stylesheet -->
+  <link rel="stylesheet" href="../assets/css/shop-style.css" />
+
+  <!-- Fonts for a magical, playful look -->
+  <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="toys-page-body">
+
+  <!-- Header section with title and tagline -->
+  <header class="toys-page-header">
+    <h1 class="toys-page-title">TinkerTown Toys</h1>
+    <p class="toys-page-subtitle">Where magic meets playtime!</p>
+
+    <div class="language-dropdown" style="position: absolute; top: -2px; right: 150px;">
+      <label for="language-select" class="language-label"></label>
+      <select id="language-select">
+        <option value="en">English</option>
+        <option value="fr">French</option>
+        <option value="ta">Tamil</option>
+      </select>
+    </div>
+    
+    <!-- This button toggles between light and dark mode -->
+    <button id="themeToggle" aria-label="Toggle Light/Dark Mode">🌙 Dark Mode</button>
+
+    <!-- Soft Scroll Button -->
+    <button id="scrollTop" aria-label="Scroll to Top">↑</button>
+  </header>
+
+  <!-- Global Home button -->
+  <button id="global-home-btn" class="global-Home" aria-label="Return to Main page">🏚️</button>
+
+  <!-- Navigation bar with links -->
+  <nav class="toys-page-nav">
+    <a href="shop-homepage.html" class="toys-nav-link">Home</a>
+    <a href="shop-services.html" class="toys-nav-link">Toys & Treasures</a>
+    <a href="shop-contact.html" class="toys-nav-link">Royal Requests</a>
+  </nav>
+
+  <!-- Main content section -->
+  <main class="toys-page-main">
+    <img src="../assets/images/banner-pic.jpg" alt="Pink Plush toys Banner" class="toys-img" loading="lazy" />
+    <p class="image--credit">Image credit: <a href="https://www.pexels.com/photo/pink-bear-plush-toy-on-white-bed-4887156/" target="_blank">Pexels</a></p>
+
+    <section class="toys-intro-section">
+      <h2 class="toys-welcome-title">Welcome to Our Magical Toyland</h2>
+      <p class="toys-description">
+        TinkerTown Toys brings fantasy to life with each plush toy and fairy themed treasure!  Our collection, which includes cuddly bears, dazzling wands, twinkling tiaras, and the most adorable princess outfits, aims to bring joy to every little dreamer.  TinkerTown Toys is the starting point for fairy tales, whether they are about a magical tea party or a fairy tale camping trip.
+      </p>
+    </section>
+
+    <!-- This is the modal that pops up after 5 seconds -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>✨Welcome to the Whimsical World of fun and Sparkle!✨</h2>
+        <p>
+          Your royal adventure begins here 👑
+        </p>
+        <p>
+           Browse our magical collections of plush buddies and fairy treasures!
+          🧸🧚‍♀️
+        </p>
+      </div>
+    </div>
+
+    <!-- This displays how many times the page has been visited -->
+    <p id="visit_counter">Visits: 0</p>
+  </main>
+
+  <!-- Footer section with year -->
+  <footer class="toys-page-footer">
+    <p>© <span id="year"></span> TinkerTown Toys. All sparkle reserved ✨</p>
+  </footer>
+
+  <!-- JavaScript for theme toggle, scroll, language switch, etc. -->
+  <script>
+    // Language Translations
+    const translations = {
+      en: {
+        title: "TinkerTown Toys",
+        subtitle: "Where magic meets playtime!",
+        welcome: "Welcome to Our Magical Toyland",
+        description: "TinkerTown Toys brings fantasy to life with each plush toy and fairy themed treasure!  Our collection, which includes cuddly bears, dazzling wands, twinkling tiaras, and the most adorable princess outfits, aims to bring joy to every little dreamer.  TinkerTown Toys is the starting point for fairy tales, whether they are about a magical tea party or a fairy tale camping trip."
+      },
+      fr: {
+        title: "TinkerTown Toys",
+        subtitle: "Là où la magie rencontre les moments de jeu !",
+        welcome: "Bienvenue dans notre pays magique des jouets",
+        description: "TinkerTown Toys donne vie à la fantaisie avec chaque peluche et trésor féerique ! Notre collection, comprenant des ours câlins, des baguettes étincelantes, des diadèmes scintillants et les tenues de princesse les plus adorables, est conçue pour apporter de la joie à chaque petit rêveur. TinkerTown Toys est le point de départ des contes de fées, qu'il s'agisse d'un goûter magique ou d'un campement enchanté."
+      },
+      ta: {
+        title: "டிங்கர்டவுன் பொம்மைகள்",
+        subtitle: "இங்கு மாயமும் மகிழ்ச்சியும் கூடுகின்றன!",
+        welcome: "எங்கள் மாயாஜால பொம்மைகள் உலகிற்கு வரவேற்கின்றோம்",
+        description: "டிங்கர்டவுன் டாய்ஸ் ஒவ்வொரு பட்டு பொம்மை மற்றும் தேவதை கருப்பொருள் புதையலுடன் கற்பனையை உயிர்ப்பிக்கிறது! கட்லி கரடிகள், திகைப்பூட்டும் மந்திரக்கோலைகள், மின்னும் தலைப்பாகைகள் மற்றும் மிகவும் அபிமான இளவரசி ஆடைகள் ஆகியவற்றை உள்ளடக்கிய எங்கள் சேகரிப்பு, ஒவ்வொரு சிறிய கனவு காண்பவருக்கும் மகிழ்ச்சியைத் தருவதை நோக்கமாகக் கொண்டுள்ளது. டிங்கர்டவுன் டாய்ஸ் விசித்திரக் கதைகளுக்கான தொடக்க புள்ளியாகும், அவை ஒரு மந்திர தேநீர் விருந்து அல்லது ஒரு விசித்திரக் கதை முகாம் பயணத்தைப் பற்றியது."
+      }
+    };
+
+    function changeLanguage(lang) {
+      const content = translations[lang];
+      document.querySelector(".toys-page-title").innerText = content.title;
+      document.querySelector(".toys-page-subtitle").innerText = content.subtitle;
+      document.querySelector(".toys-welcome-title").innerText = content.welcome;
+      document.querySelector(".toys-description").innerText = content.description;
+      localStorage.setItem("selectedLanguage", lang);
+    }
+
+    // Load saved language preference on page load
+    const savedLang = localStorage.getItem("selectedLanguage") || "en";
+    document.getElementById("language-select").value = savedLang;
+    changeLanguage(savedLang);
+
+    // Update language on dropdown change
+    document.getElementById("language-select").addEventListener("change", (e) => {
+      changeLanguage(e.target.value);
+    });
+
+    // Theme toggle
+    const themeToggle = document.getElementById("themeToggle");
+    if (localStorage.getItem("theme") === "light") {
+      document.documentElement.classList.add("new-theme");
+      themeToggle.textContent = "🌞 Light Mode";
+    } else {
+      themeToggle.textContent = "🌙 Dark Mode";
+    }
+
+    themeToggle.addEventListener("click", () => {
+      const html = document.documentElement;
+      if (html.classList.contains("new-theme")) {
+        html.classList.remove("new-theme");
+        localStorage.setItem("theme", "dark");
+        themeToggle.textContent = "🌙 Dark Mode";
+      } else {
+        html.classList.add("new-theme");
+        localStorage.setItem("theme", "light");
+        themeToggle.textContent = "🌞 Light Mode";
+      }
+    });
+
+    // Scroll to Top functionality
+    const scrollTopBtn = document.getElementById("scrollTop");
+    window.addEventListener("scroll", () => {
+      scrollTopBtn.style.display = window.scrollY > 200 ? "block" : "none";
+    });
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // Global home redirect
+    document.getElementById("global-home-btn").addEventListener("click", () => {
+      window.location.href = "../index.html";
+    });
+
+    // Modal logic - shows the modal after 5 seconds
+    const modal = document.getElementById("modal");
+    const closeModalBtn = document.querySelector(".close-btn");
+
+    // Waits for 5 seconds and then shows the modal
+    setTimeout(() => {
+      modal.style.display = "block";
+    }, 5000);
+
+    // Closes the modal when the "x" button is clicked
+    closeModalBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    // Close the modal if you click outside of it
+    window.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+
+    // Visit counter for shop homepage
+    const visit_counter = document.getElementById("visit_counter");
+    let shopVisits = localStorage.getItem("shop_visits") || 0;
+    shopVisits++;
+    localStorage.setItem("shop_visits", shopVisits);
+    visit_counter.innerText = `Visits: ${shopVisits}`;
+
+    // Product Filtering
+const filterSelect = document.getElementById("product-filter");
+const allProducts = document.querySelectorAll(".product");
+
+filterSelect.addEventListener("change", () => {
+  const selected = filterSelect.value;
+
+  allProducts.forEach(product => {
+    const category = product.getAttribute("data-category");
+
+    if (selected === "all" || category === selected) {
+      product.style.display = "block";
+    } else {
+      product.style.display = "none";
+    }
+  });
+});
+
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
+

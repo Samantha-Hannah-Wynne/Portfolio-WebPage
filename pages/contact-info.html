@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!-- Meta tags for SEO and to make the page suitable for mobile too -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with Samantha Hannah Wynne for project collaborations, inquiries, or feedback.">
+  <meta name="keywords" content="contact, reach out, inquiry, get in touch">
+
+  <!-- Title for the webpage -->
+  <title>Contact</title>
+
+  <!-- Google Fonts to make the text look pretty -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <!-- This is linking the external CSS file where the styles are defined -->
+  <link rel="stylesheet" href="../assets/css/global-style.css" />
+</head>
+<body class="contact-body">
+
+  <!-- This is the header section with a title and a theme toggle button -->
+  <header class="contact-header">
+    <h1>Contact Me</h1>
+    <p>Feel free to get in touch!</p>
+
+    <!-- This button toggles between light and dark mode -->
+    <button id="themeToggle" aria-label="Toggle Light/Dark Mode">🌞 Light Mode</button>
+
+    <!-- Soft Scroll Button -->
+    <button id="scrollTop" aria-label="Scroll to Top">↑</button>
+  </header>
+
+  <!-- Global Home button -->
+  <button id="global-home-btn" class="global-Home" aria-label="Return to Main page">🏚️</button>
+
+  <!-- Main Navigation -->
+  <nav class="contact-nav">
+    <ul>
+      <a href="profile-dashboard.html" class="menu-item">Profile</a>
+      <a href="university-info.html" class="menu-item">DBS</a>
+      <a href="poject-dashboard.html" class="menu-item">Projects</a>
+      <a href="contact-info.html" class="menu-item">Contact</a>
+    </ul>
+  </nav>
+
+  <!-- Form filling section -->
+  <main class="contact-main">
+    <section class="contact-section">
+      <h2>Contact Form</h2>
+      <form id="commentForm" action="#" method="POST">
+        <!-- User enters their full name -->
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <!-- User enters their email -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <!-- User enters subject (its optional) -->
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject">
+
+        <!-- The user writes the message here -->
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <!-- Button to send the form -->
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer with copyright info and the license -->
+  <footer>
+    <p>© <span id="year"></span> Samantha Hannah Wynne. All rights reserved.</p>
+    <p>Licensed under Creative Commons 4.0.</p>
+  </footer>
+
+
+  <script>
+
+    // Return to Home button functionality
+    document.getElementById("global-home-btn").addEventListener("click", () => {
+      window.location.href = "../index.html"; // Redirect to the main page
+    });
+
+     // Light/Dark mode toggle logic
+     const themeToggle = document.getElementById("themeToggle");
+
+  // This checks the saved theme in localStorage and apply it when the page loads
+  if (localStorage.getItem("theme") === "light") {
+    document.documentElement.classList.add("new-theme");
+    themeToggle.textContent = "🌙 Dark Mode";
+  } else {
+    themeToggle.textContent = "🌞 Light Mode";
+  }
+
+  // When the button is clicked, toggle between light and dark mode
+  themeToggle.addEventListener("click", () => {
+    const html = document.documentElement;
+
+    if (html.classList.contains("new-theme")) {
+      html.classList.remove("new-theme");
+      localStorage.setItem("theme", "dark");
+      themeToggle.textContent = "🌞 Light Mode";
+    } else {
+      html.classList.add("new-theme");
+      localStorage.setItem("theme", "light");
+      themeToggle.textContent = "🌙 Dark Mode";
+    }
+  });
+
+// Smooth scroll to top
+const scrollTopBtn = document.getElementById("scrollTop");
+
+// This shows button when scrolling down
+window.addEventListener("scroll", () => {
+if (window.scrollY > 200) {
+  scrollTopBtn.style.display = "block";
+} else {
+  scrollTopBtn.style.display = "none";
+}
+});
+
+scrollTopBtn.addEventListener("click", () => {
+window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// XSS Protection and Form Validation
+const commentForm = document.getElementById("commentForm");
+commentForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const subject = document.getElementById("subject").value;
+  const message = sanitizeInput(document.getElementById("message").value);
+
+  if (!email.includes("@")) {
+    alert("Invalid email address!");
+    return;
+  }
+
+  alert(`Thank you, ${name}, for your message: ${message}`);
+});
+
+// Function to sanitize user input
+function sanitizeInput(input) {
+  let div = document.createElement("div");
+  div.innerText = input;  // Convert any potentially dangerous characters into text
+  return div.innerHTML;   // Return sanitized HTML (escaped text)
+}
+// Automatically updates the copyright year to the current year
+document.getElementById("year").textContent = new Date().getFullYear();
+
+  </script>
+
+</body>
+</html>

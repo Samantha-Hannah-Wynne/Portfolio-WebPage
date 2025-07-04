@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Toys & Treasures | TinkerTown Toys</title>
+
+  <!-- Meta tags for SEO --> 
+  <meta name="description" content="Discover TinkerTown Toys' royal collection of plush toys, fairy wands, and princess dresses. Perfect for magical adventures!">
+  <meta name="keywords" content="TinkerTown Toys services, plush toys, fairy wands, princess dresses, magical adventures">
+  <meta name="author" content="TinkerTown Toys">
+
+  <!-- Meta tags for proper rendering and mobile responsiveness -->
+
+  <!-- This is linking the external CSS file where the styles are defined -->
+  <link rel="stylesheet" href="../assets/css/shop-style.css" />
+  <!-- Magical Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="page-body">
+
+  <!-- Header -->
+  <!-- This is the header section with the title, a tagline, and a theme toggle button -->
+  <header class="header">
+    <h1 class="title">TinkerTown Toys</h1>
+    <p class="subtitle">Where magic meets playtime!</p>
+
+    <!-- This button toggles between light and dark mode -->
+    <button id="themeToggle" aria-label="Toggle Light/Dark Mode">🌞 Light Mode</button>
+
+     <!-- Soft Scroll Button -->
+    <button id="scrollTop" aria-label="Scroll to Top">↑</button>
+  </header>
+
+  <!-- Global Home button -->
+  <button id="global-home-btn" class="global-Home" aria-label="Return to Main page">🏚️</button>
+
+  </header>
+
+  
+  <!-- Navigation bar with links to other pages -->
+  <nav class="toys-page-nav">
+    <a href="shop-homepage.html" class="toys-nav-link">Home</a>
+    <a href="shop-services.html" class="toys-nav-link">Toys & Treasures</a>
+    <a href="shop-contact.html" class="toys-nav-link">Royal Requests</a>
+    
+
+  </nav>
+
+  <!-- Main -->
+  <!-- Main content section with an introduction and product grid -->
+  <main class="main">
+
+    <!-- Intro Section -->
+    <section class="intro">
+      <h2>Our Royal Collection</h2>
+      <p>
+        Check out our amazing collection of plush toys and fairy themed items, such as magical wands and pretty dresses.  Each item has been carefully chosen and is set to add some fun and shine to your day!      </p>
+    </section>
+
+    <!-- Product filter Dropdown -->
+<section class="filter-section">
+  <label for="product-filter" class="filter-label"></label>
+  <select id="product-filter" aria-label="Filter Products">
+    <option value="all">All Products</option>
+    <option value="plush">Plush Toys</option>
+    <option value="fairy">Wings & Wands</option>
+  </select>
+</section>
+
+<!-- Products Grid -->
+<section class="products">
+
+  <div class="product" data-category="plush">
+    <img src="../assets/images/unicorn-pic.jpg" alt="Unicorn Plush Toy" loading="lazy" />
+    <p class="image--credit">Image credit: <a href="https://www.pexels.com/photo/white-and-pink-unicorn-plush-toy-4887163/" target="_blank">Pexels</a></p>
+    <h3>Fluffy Unicorn</h3>
+    <p>
+      A cute pink and white unicorn with gorgeous pink shimmer. She's the ideal cuddling buddy, ready for unlimited adventures and unforgettable memories!
+    </p>
+    <p class="price">€19.99</p>
+        <a href="shop coming-soon.html" class="buy-now">Buy Now</a>
+  </div>
+
+  <div class="product" data-category="plush">
+    <img src="../assets/images/blue plush-pic.jpg" alt="Blue plush bear" loading="lazy"/>
+    <p class="image--credit">Image credit: <a href="https://www.pexels.com/photo/close-up-shot-of-a-blue-plush-toy-5062307/" target="_blank">Pexels</a></p>
+    <h3>Blue Bear Buddy</h3>
+    <p>
+      This soft blue bear is designed for unlimited snuggling and wild adventures.  It makes the ideal friend for all kids, giving comfort and joy wherever it goes.  A lifelong buddy who will be treasured for ages to come! 
+    </p>
+    <p class="price">€22.99</p>
+        <a href="shop coming-soon.html" class="buy-now">Buy Now</a>
+  </div>
+
+  <div class="product" data-category="fairy">
+    <img src="../assets/images/fairy dress-pic.jpg" alt="Princess Fairy Dress" loading="lazy"/>
+    <p class="image--credit">Image credit: <a href="https://www.pexels.com/photo/photo-of-a-girl-wearing-costume-looking-up-11715624/" target="_blank">Pexels</a></p>
+    <h3>Fairy Princess Dress</h3>
+    <p>
+      Put on this sparkling fairy dress and get ready for some magical fun!  With its sparkling styles and soft, comfortable fabric, it's ideal for little adventurers who wish to make every day feel like a fairy tale.  Perfect for twirls, smiles, and unlimited imagination!
+    </p>
+    <p class="price">€29.99</p>
+        <a href="shop coming-soon.html" class="buy-now">Buy Now</a>
+  </div>
+
+  <div class="product" data-category="fairy">
+    <img src="../assets/images/fairy wand-pic.jpg" alt="Magic Wand Toy" loading="lazy"/>
+    <p class="image--credit">Image credit: <a href="https://www.pexels.com/photo/faceless-girl-showing-magic-wand-7139457/" target="_blank">Pexels</a></p>
+    <h3>Twinkle Wand</h3>
+    <p>
+      This lovely pink fairy wand is the ideal combination of sparkle and magic!  With its sparkling finish, it's sure to fulfill every young fairy's fantasy.  Wave it and let the magic happen!
+    </p>
+    <p class="price">€14.99</p>
+        <a href="shop coming-soon.html" class="buy-now">Buy Now</a>
+  </div>
+
+</section>
+
+
+  
+  </main>
+
+  <!-- Footer -->
+  <!-- Footer with copyright info and the license -->
+  <footer class="footer">
+    <p>© <span id="year"></span> TinkerTown Toys. All sparkle reserved ✨</p>
+  </footer>
+
+  <script>
+
+    // Return to Home button functionality
+    document.getElementById("global-home-btn").addEventListener("click", () => {
+      window.location.href = "../index.html"; // Redirect to the main page
+    });
+
+    // Light/Dark mode toggle logic
+    const themeToggle = document.getElementById("themeToggle");
+
+  // This checks the saved theme in localStorage and apply it when the page loads
+  if (localStorage.getItem("theme") === "light") {
+    document.documentElement.classList.add("new-theme");
+    themeToggle.textContent = "🌞 Light Mode";
+  } else {
+    themeToggle.textContent = "🌙 Dark Mode";
+  }
+
+  // When the button is clicked, toggle between light and dark mode
+  themeToggle.addEventListener("click", () => {
+    const html = document.documentElement;
+
+    if (html.classList.contains("new-theme")) {
+      html.classList.remove("new-theme");
+      localStorage.setItem("theme", "dark");
+      themeToggle.textContent = "🌙 Dark Mode";
+    } else {
+      html.classList.add("new-theme");
+      localStorage.setItem("theme", "light");
+      themeToggle.textContent = "🌞 Light Mode";
+    }
+  });
+
+  // Smooth scroll to top
+const scrollTopBtn = document.getElementById("scrollTop");
+// Product Filtering
+const filterSelect = document.getElementById("product-filter");
+const allProducts = document.querySelectorAll(".product");
+
+filterSelect.addEventListener("change", () => {
+  const selected = filterSelect.value;
+
+  allProducts.forEach(product => {
+    const category = product.getAttribute("data-category");
+
+    if (selected === "all" || category === selected) {
+      product.style.display = "block";
+    } else {
+      product.style.display = "none";
+    }
+  });
+});
+
+
+
+// This shows button when scrolling down
+window.addEventListener("scroll", () => {
+if (window.scrollY > 200) {
+  scrollTopBtn.style.display = "block";
+} else {
+  scrollTopBtn.style.display = "none";
+}
+});
+
+scrollTopBtn.addEventListener("click", () => {
+window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// Automatically updates the copyright year to the current year
+document.getElementById("year").textContent = new Date().getFullYear();
+
+  </script>
+
+</body>
+</html>
